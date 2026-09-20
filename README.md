@@ -58,6 +58,8 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [Laya (ConvAI Innovations)](https://laya.convaiinnovations.com/) — Apache-2.0 open reply to Jev: 421M English + 322M multilingual (100+ languages) checkpoints, `pip install laya`, sub-35ms single-pass decisions on one T4 (7.2ms batched), zero API bill. Vendor reports 0.766 vs Jev's published 0.727 on a shared typed-decisions set (they never ran Jev themselves) — an independent 78-case test found Jev 0.974 vs Laya 0.590, Laya fastest at 30ms/case vs ~302ms for Jev (small sample).
 - [pngwn/system-one-qwen3.5-4b-scorer-v2b](https://huggingface.co/pngwn/system-one-qwen3.5-4b-scorer-v2b) — Community single-pass scorer on Qwen3.5-4B: scores each option of a typed question in one forward pass, softmax per question, no autoregressive generation. Val split: 0.803 accuracy, ECE 0.022. Non-commercial (training data is CC-BY-NC-4.0).
 - [askjev.ai](https://askjev.ai/) — "Ask Jev anything. It won't answer. It will judge." Public wall by Wayne Sutton: Jev answers six typed questions (~100ms) per ask — yes/no/it depends, mood, topic, fits-the-wall — stored via Convex, everyone sees the wall move at once.
+- [r-ms/mini-jev](https://github.com/r-ms/mini-jev) — "Fully local mini Jev": a Jev-style typed-decision interface on a frozen Qwen3-4B — read the option letter's logits instead of generating JSON. Preregistered experiment with a teaching bench; not production-ready.
+- [robipop22/Jev-is-odd](https://github.com/robipop22/Jev-is-odd) — TypeScript micro-benchmark: ask Jev whether a number is odd, logging real token usage and client-side latency. 20/20 fixed cases, median/p95 round-trip 294.3/364.8ms (network included), whole run $0.00029 (jev-1.13.0, measured 2026-09-18).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -82,6 +84,8 @@ Numbers with sources. Vendor claims are labeled as such.
 - [Bryo AI: email triage](https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/) — CTO Nikhil Mudholkar found Gemini slightly more accurate but **10–20× more expensive** than Jev.
 - [@ebrain.lab: Jev vs Claude Opus on 40 Korean sentences](https://www.threads.com/@ebrain.lab/post/DddGgXuoLlL) — One API call per sentence: Jev 40/40 correct in 1.9s for $0.0012; Claude Opus also 40/40 but ~24× more expensive. Caveat: prompting Jev like an LLM with the whole document dropped accuracy to 62% — commenters note batching increases drift.
 - [@simplifyinai: 27 questions, one parallel request](https://www.threads.com/@simplifyinai/post/DdeAkQ9ksP9) — Jev answered 27 typed questions in a single parallel request in 0.11s for $0.000083, head-to-head vs GPT-5.6-texta on the same task (community test).
+- [anisselbd/jev-phishing-bench](https://github.com/anisselbd/jev-phishing-bench) — Jev (jev-1.13.0) vs Claude Haiku 4.5 on 2,000 phishing emails (results 2026-09-17; reproducible repo with calibration audit). Jev: 62.6% accuracy, 43.2% recall on phishing, ECE 0.154, p50 239ms, $0.038 per 1K emails. Haiku 4.5: 81.3% accuracy, ECE 0.097, p50 687ms, $0.462 per 1K. Verdict: Jev loses on accuracy, wins on speed and cost.
+- [OpenRouter: Jev vs 4 LLMs on a 30-class task (via TipRanks)](https://www.tipranks.com/news/private-companies/benchmark-highlights-performance-edge-for-decision-model-on-openrouter) — OpenRouter's own benchmark, 200 synthetic cases: Jev >5× faster than the next fastest model, matched top LLMs on accuracy, second cheapest behind Qwen3.8 Flash.
 
 ## Demos on X
 
@@ -122,6 +126,8 @@ Single-post links rot fast; handles + what they showed. PRs with direct links we
 - [ThursdAI (2026-09-17)](https://sub.thursdai.news/p/typesafes-jev-changes-everything) — "A ChatGPT moment for decisions."
 - [explainx.ai: "How Does Jev Work? RLCD & Parallel Inference Explained"](https://www.explainx.ai/blog/how-does-jev-work-rlcd-system-one-model-explained-2026) — Architecture question treated honestly: RLCD objective + single parallel forward pass are confirmed; encoder-only transformer / text-diffusion / purpose-built are labeled reader speculation, not confirmed fact.
 - [Gadget Pilipinas: "TypeSafe Jev: System One Model, answered by Laya" (2026-09-20)](https://www.gadgetpilipinas.net/2026/09/typesafe-jev-system-one-model-laya/) — Laya's prior-art dispute (March 2025 papers, arXiv:2503.23303) plus an independent 78-case test: Jev 0.974 vs Laya 0.590, Laya fastest at 30ms/case vs ~302ms for Jev.
+- [BuzzRAG: "TypeSafe's Jev Bets on Faster Decisions for AI"](https://buzzrag.com/article/typesafe-jev-faster-decisions-ai-agents-7vnwji) — Cites an Every/Forkast extraction test (~25× faster, 580× cheaper than Claude Fable 5.1 on one task) and notes no named production customers or disclosed revenue yet.
+- [Cherry Creek News: "Jev evals measure agreement, not correctness"](https://thecherrycreeknews.com/typesafe-jev-system-one-model-claims-evals-independent-tests-cherry_creek/) — Methodology critique of TypeSafe's workflow evals (reference answer is the average of GPT-6 Astra and Fable 5.1), with footnotes on the Doom and Wikiracing demos.
 
 ## Papers
 
