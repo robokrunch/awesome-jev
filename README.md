@@ -55,6 +55,9 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [steventsao/jevzen](https://github.com/steventsao/jevzen) — Jev experiments.
 - [zhuyansen/jev-search-rerank-eval](https://github.com/zhuyansen/jev-search-rerank-eval) — Search rerank evaluation with Jev.
 - [nekuda-ai/WindTunnel](https://github.com/nekuda-ai/WindTunnel) — Agent testing harness with Jev.
+- [Laya (ConvAI Innovations)](https://laya.convaiinnovations.com/) — Apache-2.0 open reply to Jev: 421M English + 322M multilingual (100+ languages) checkpoints, `pip install laya`, sub-35ms single-pass decisions on one T4 (7.2ms batched), zero API bill. Vendor reports 0.766 vs Jev's published 0.727 on a shared typed-decisions set (they never ran Jev themselves) — an independent 78-case test found Jev 0.974 vs Laya 0.590, Laya fastest at 30ms/case vs ~302ms for Jev (small sample).
+- [pngwn/system-one-qwen3.5-4b-scorer-v2b](https://huggingface.co/pngwn/system-one-qwen3.5-4b-scorer-v2b) — Community single-pass scorer on Qwen3.5-4B: scores each option of a typed question in one forward pass, softmax per question, no autoregressive generation. Val split: 0.803 accuracy, ECE 0.022. Non-commercial (training data is CC-BY-NC-4.0).
+- [askjev.ai](https://askjev.ai/) — "Ask Jev anything. It won't answer. It will judge." Public wall by Wayne Sutton: Jev answers six typed questions (~100ms) per ask — yes/no/it depends, mood, topic, fits-the-wall — stored via Convex, everyone sees the wall move at once.
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -77,6 +80,8 @@ Numbers with sources. Vendor claims are labeled as such.
 - [TypeSafe's own workflow evals (via MarkTechPost)](https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/) — Jev 0.114s / $0.000081 vs GPT-5.6 Terra 8.566s / $0.013880 (claimed 193.6× faster, 444.6× cheaper). Fine print: reference answer is the average of GPT-6 Astra and Fable 5.1; TypeSafe's own team wrote the workflows; TypeSafe says these gains sit at the high end and it cannot prove the price is unsubsidized.
 - [Vercel: command safety](https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/) — Guillermo Rauch reported Jev up to **18× faster at p95** than GPT Luna for command-safety review, and more accurate (via engineer Pranit Sharma's benchmark).
 - [Bryo AI: email triage](https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/) — CTO Nikhil Mudholkar found Gemini slightly more accurate but **10–20× more expensive** than Jev.
+- [@ebrain.lab: Jev vs Claude Opus on 40 Korean sentences](https://www.threads.com/@ebrain.lab/post/DddGgXuoLlL) — One API call per sentence: Jev 40/40 correct in 1.9s for $0.0012; Claude Opus also 40/40 but ~24× more expensive. Caveat: prompting Jev like an LLM with the whole document dropped accuracy to 62% — commenters note batching increases drift.
+- [@simplifyinai: 27 questions, one parallel request](https://www.threads.com/@simplifyinai/post/DdeAkQ9ksP9) — Jev answered 27 typed questions in a single parallel request in 0.11s for $0.000083, head-to-head vs GPT-5.6-texta on the same task (community test).
 
 ## Demos on X
 
@@ -92,6 +97,7 @@ Single-post links rot fast; handles + what they showed. PRs with direct links we
 - **@tdinh_me** — YouTube sponsor-skip browser extension.
 - **@0xidanlevin** — WebMCP benchmark with Jev.
 - **@Steve8708** — "Jev is awesome but for the love of god please STOP posting fake demos" — the thread that forced the fake-demo vs real-measurement debate (148K views).
+- **@marckohlbrugge** — Voice computer assistant with Jev: local Whisper listens, Jev classifies spoken intent against a live accessibility tree fed by a small Swift app, all real-time (early build; via the madewithjev.com showcase).
 
 ## Videos
 
@@ -114,6 +120,8 @@ Single-post links rot fast; handles + what they showed. PRs with direct links we
 - [dev.to: "Jev, the ChatGPT co-creator's System One model can't talk"](https://dev.to/lukeocodes/jev-the-chatgpt-co-creators-system-one-model-cant-talk-3774)
 - [dev.to: "How to use Jev: a practical guide"](https://dev.to/valyuai/how-to-use-jev-a-practical-guide-to-typesafes-system-one-model-g5e)
 - [ThursdAI (2026-09-17)](https://sub.thursdai.news/p/typesafes-jev-changes-everything) — "A ChatGPT moment for decisions."
+- [explainx.ai: "How Does Jev Work? RLCD & Parallel Inference Explained"](https://www.explainx.ai/blog/how-does-jev-work-rlcd-system-one-model-explained-2026) — Architecture question treated honestly: RLCD objective + single parallel forward pass are confirmed; encoder-only transformer / text-diffusion / purpose-built are labeled reader speculation, not confirmed fact.
+- [Gadget Pilipinas: "TypeSafe Jev: System One Model, answered by Laya" (2026-09-20)](https://www.gadgetpilipinas.net/2026/09/typesafe-jev-system-one-model-laya/) — Laya's prior-art dispute (March 2025 papers, arXiv:2503.23303) plus an independent 78-case test: Jev 0.974 vs Laya 0.590, Laya fastest at 30ms/case vs ~302ms for Jev.
 
 ## Papers
 
