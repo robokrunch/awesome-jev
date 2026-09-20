@@ -60,6 +60,7 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [askjev.ai](https://askjev.ai/) — "Ask Jev anything. It won't answer. It will judge." Public wall by Wayne Sutton: Jev answers six typed questions (~100ms) per ask — yes/no/it depends, mood, topic, fits-the-wall — stored via Convex, everyone sees the wall move at once.
 - [r-ms/mini-jev](https://github.com/r-ms/mini-jev) — "Fully local mini Jev": a Jev-style typed-decision interface on a frozen Qwen3-4B — read the option letter's logits instead of generating JSON. Preregistered experiment with a teaching bench; not production-ready.
 - [robipop22/Jev-is-odd](https://github.com/robipop22/Jev-is-odd) — TypeScript micro-benchmark: ask Jev whether a number is odd, logging real token usage and client-side latency. 20/20 fixed cases, median/p95 round-trip 294.3/364.8ms (network included), whole run $0.00029 (jev-1.13.0, measured 2026-09-18).
+- [moritzkremb/jev-voice-browser](https://github.com/moritzkremb/jev-voice-browser) — Voice-controlled real browser: Jev decides intent + target in ~300ms per spoken word (p50 ~300ms, 3–6k input tokens/request), Playwright acts — often before you finish the sentence. 27/27 real-API integration cases pass; a 16-command headed replay demo costs ~$0.01 (measured 2026-09-17).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -86,6 +87,7 @@ Numbers with sources. Vendor claims are labeled as such.
 - [@simplifyinai: 27 questions, one parallel request](https://www.threads.com/@simplifyinai/post/DdeAkQ9ksP9) — Jev answered 27 typed questions in a single parallel request in 0.11s for $0.000083, head-to-head vs GPT-5.6-texta on the same task (community test).
 - [anisselbd/jev-phishing-bench](https://github.com/anisselbd/jev-phishing-bench) — Jev (jev-1.13.0) vs Claude Haiku 4.5 on 2,000 phishing emails (results 2026-09-17; reproducible repo with calibration audit). Jev: 62.6% accuracy, 43.2% recall on phishing, ECE 0.154, p50 239ms, $0.038 per 1K emails. Haiku 4.5: 81.3% accuracy, ECE 0.097, p50 687ms, $0.462 per 1K. Verdict: Jev loses on accuracy, wins on speed and cost.
 - [OpenRouter: Jev vs 4 LLMs on a 30-class task (via TipRanks)](https://www.tipranks.com/news/private-companies/benchmark-highlights-performance-edge-for-decision-model-on-openrouter) — OpenRouter's own benchmark, 200 synthetic cases: Jev >5× faster than the next fastest model, matched top LLMs on accuracy, second cheapest behind Qwen3.8 Flash.
+- [Matthew O'Riordan's Pong latency showdown (via RuntimeWire)](https://runtimewire.com/article/diogo-almeida-typesafe-jev-40m-seed-pong) — Four lanes, same game state, recorded 2026-09-17 via Vercel AI Gateway: Jev averaged **227ms/decision (p95 400ms)**; Gemini 3.8 Flash 3.2s, Claude Haiku 4.5 2.5s, GPT-5.6 Sol 3.5s. In the first 12s Jev returned 47 decisions vs 3/2/2 for the chat models. Caveat: a latency demo, not a strategy test — the chat models picked the correct move 95–100% of the time, and every model got structured state (no vision).
 
 ## Demos on X
 
