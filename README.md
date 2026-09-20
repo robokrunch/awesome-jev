@@ -19,6 +19,7 @@ This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark
 - [Benchmarks & Evaluations](#benchmarks--evaluations)
 - [Demos on X](#demos-on-x)
 - [Videos](#videos)
+- [Tutorials & Guides](#tutorials--guides)
 - [News & Articles](#news--articles)
 - [Papers](#papers)
 - [Community](#community)
@@ -112,6 +113,13 @@ Single-post links rot fast; handles + what they showed. PRs with direct links we
 - [Jev build walkthrough](https://www.youtube.com/watch?v=X117w2Rark8)
 - [Community Jev demo roundup](https://www.youtube.com/watch?v=LU6K07U4wOk)
 - 📊 [RoboKrunch: 300 real Jev decisions on a simulated 10K-robot fleet](https://github.com/robokrunch/jev-physical-ai) — 60s, watch the cost ticker.
+
+## Tutorials & Guides
+
+Hands-on, not hot takes. Entries here were checked for real code or real runs.
+
+- [Avi Chawla: "Build your own Jev (100% local)" (X article, 2026-09-20)](https://x.com/_avichawla/status/2101563610644496464) — Recreates Jev's fixed-answer scoring on a local open LLM via SGLang's `/v1/score`: read the option letter's logits, softmax over the labels, zero text generation. Real run on Qwen2.5-0.5B-Instruct (logits 25.28/24.50/21.19 → 0.68/0.31/0.01), plus a 100-case benchmark app pitting the scoring lane against a generation lane. ~5,000 words, 107K views.
+- [Movez: "Jev Engineering: how to build the fastest AI Agent Brain in 10 Steps" (X article, 2026-09-19)](https://x.com/0xMovez/status/2101007482919227841) — Ten-step guide to wiring Jev in as an agent's decision brain: Playground, SDK, a `chief.py` decision router, dynamic menus, parallel questions, guardrails, cost math, five production use cases. Caveat: most headline numbers (flights in 7s for $0.0039, 1,018 papers for $0.08) are quoted community experiments, and "200× faster, 400× cheaper" is the author's claim — not an independent measurement. 302K views.
 
 ## News & Articles
 
