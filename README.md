@@ -90,6 +90,8 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [zadescoxp/Jev-Trades](https://github.com/zadescoxp/Jev-Trades) — Next.js + Python paper-trading bot: one-minute crypto candles streamed from Yahoo Finance, technical indicators computed, Jev decides on a simulated portfolio. No broker or live order API connected (21★, Apache-2.0).
 - [AboveColin/HA-Jev](https://github.com/AboveColin/HA-Jev) — Home Assistant integration for Jev: typed answers as sensors, four actions for automations, and a conversation agent for Assist (40★, MIT, pushed 2026-09-21).
 - [yaredtekile/jev-2048](https://github.com/yaredtekile/jev-2048) — Jev plays live 2048: no pixels, no text — Jev only picks the swipe direction, one move a few hundred tokens (MIT, created 2026-09-18).
+- [timpratim/macbrow](https://github.com/timpratim/macbrow) — Voice-controlled Mac + browser (108★, MIT, pushed 2026-09-21): Gradium streaming STT → Jev picks the tool + its arguments in one request (~300ms) → AppleScript → Gradium TTS; the browser loop is jev-ultrafast. Measured on the author's machine: "add the best vacuum cleaner to my Amazon cart" in 4 steps / 11s, "play the Love Hypothesis trailer" from end of speech to video playing in 1.6s.
+- [fhshaik/typesafe-mario](https://github.com/fhshaik/typesafe-mario) — Jev agent plays Super Mario Bros from structured emulator state (330★, created 2026-09-16).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -102,6 +104,7 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - `jev-cvss` — CVE description → CVSS v3.1 metric predictions.
 - `jev-leftpad` ([f/jev-leftpad](https://github.com/f/jev-leftpad), 67★) — left-pad strings with Jev. For reasons. The npm joke returns; real code, tests included.
 - `@builtbynus` / [Nūs](https://www.instagram.com/reel/DdjhmVyS1Ej/) — Jev wired into their app as the "reflexes": voice commands open apps, type, and search while an on-screen millisecond counter tracks each Jev decision. Screen-recorded, one continuous take (reel, 2026-09-21).
+- `@datatramadan` — Jev plays Chrome Dino with live RUN/JUMP/DUCK probability + confidence telemetry; mid-video the screen switches to OpenRouter logs confirming `Jev 1.13` generations ([reel](https://www.instagram.com/reel/DdjkRDnyd5e/), 2026-09-21).
 
 ## Benchmarks & Evaluations
 
@@ -119,6 +122,7 @@ Numbers with sources. Vendor claims are labeled as such.
 - [OpenRouter: Jev vs 4 LLMs on a 30-class task (via TipRanks)](https://www.tipranks.com/news/private-companies/benchmark-highlights-performance-edge-for-decision-model-on-openrouter) — OpenRouter's own benchmark, 200 synthetic cases: Jev >5× faster than the next fastest model, matched top LLMs on accuracy, second cheapest behind Qwen3.8 Flash.
 - [Matthew O'Riordan's Pong latency showdown (via RuntimeWire)](https://runtimewire.com/article/diogo-almeida-typesafe-jev-40m-seed-pong) — Four lanes, same game state, recorded 2026-09-17 via Vercel AI Gateway: Jev averaged **227ms/decision (p95 400ms)**; Gemini 3.8 Flash 3.2s, Claude Haiku 4.5 2.5s, GPT-5.6 Sol 3.5s. In the first 12s Jev returned 47 decisions vs 3/2/2 for the chat models. Caveat: a latency demo, not a strategy test — the chat models picked the correct move 95–100% of the time, and every model got structured state (no vision).
 - [FazalAAli/jev-robotics-demo](https://github.com/FazalAAli/jev-robotics-demo) — Jev vs Claude Opus 5 driving a simulated Franka arm + Allegro hand in MuJoCo (stack a blue cube on a red one): one recorded run each — Jev 19.1s / $0.0006 vs Opus 158.8s / $0.75 (clean first-try Opus runs took ~55s / $0.19). Design: code owns the physics, Jev owns the judgment.
+- [anessbelbati/jev-rerank-bench](https://github.com/anessbelbati/jev-rerank-bench) — Can a decision model beat dedicated rerankers? Jev vs Cohere Rerank 4 vs ZeroEntropy zerank-2 vs a chat-model baseline: 14 datasets, every raw API response saved, bootstrap ranges on every gap (MIT). Ranking average: Jev 0.692 vs Cohere Pro 0.691 (no winner declared); equal query weighting puts Cohere ahead; Jev better on the NevIR negation test. Measurements began 2026-09-16.
 
 ## Demos on X
 
@@ -184,6 +188,7 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 - [The Unwind AI: "Get started with Jev for free" (2026-09-20)](https://www.theunwindai.com/p/get-started-with-jev-for-free) — LocalJev: Jev-compatible API served on local models via oMLX, tested across 1,200 requests on five 4-bit models on an M5 Max (prompted JSON probability output, not direct-logit — check calibration); official TypeSafe Agent Skill for Claude Code to find Jev-shaped holes in your codebase; kev's six-questions-in-~160ms claim with Jev leading ~19 points out-of-domain.
 - [scriptbyai.com: "The Ultimate Jev Resource List 2026" (2026-09-20)](https://www.scriptbyai.com/jev-resource-list/) — Competing resource catalogue: open System-One implementations (choosekit, Decider, Jeff, LitJev, LocalJev, NanoJev, jevmlx, OpenDecision, openjev-sglang, Jev Visual) — repos unverified by us, listed as discovery leads.
 - [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) — Evidence-backed use-case catalogue for building with Jev: design patterns, a question catalog, failure modes, and a model-selection guide — every claim labeled and sourced (15★, active on 2026-09-21).
+- [Pranay Suyash (Medium): "Jev's 193.6× Faster, 444.6× Cheaper Claim: What TypeSafe's Workflow Eval Actually Measures" (2026-09-21)](https://pranaysuyash.medium.com/jevs-193-6-faster-444-6-cheaper-claim-what-typesafe-s-workflow-eval-actually-measures-68b8529e822b) — Takes the headline multipliers apart: the benchmark decomposes the task before calling the model, so it tests a way of building software as much as a model. Walks through the four published workflows (security-incident, agent-trace, invoice, customer-service) and the three primitives (Noul, Choice, Score).
 
 ## Papers
 
@@ -194,6 +199,7 @@ None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-20.
 - [HN: Jev launch discussion](https://news.ycombinator.com/item?id=49761730)
 - [HN: Jev technical discussion](https://news.ycombinator.com/item?id=49762040)
 - [madewithjev.com](https://madewithjev.com/) — Demo hub.
+- [jevable.com](https://jevable.com/) — Curated gallery of Jev demos with per-project X view counts and category filters (spotted 2026-09-21 via @choi.openai).
 
 ## Contributing
 
