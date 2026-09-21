@@ -62,6 +62,8 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [r-ms/mini-jev](https://github.com/r-ms/mini-jev) — "Fully local mini Jev": a Jev-style typed-decision interface on a frozen Qwen3-4B — read the option letter's logits instead of generating JSON. Preregistered experiment with a teaching bench; not production-ready.
 - [robipop22/Jev-is-odd](https://github.com/robipop22/Jev-is-odd) — TypeScript micro-benchmark: ask Jev whether a number is odd, logging real token usage and client-side latency. 20/20 fixed cases, median/p95 round-trip 294.3/364.8ms (network included), whole run $0.00029 (jev-1.13.0, measured 2026-09-18).
 - [moritzkremb/jev-voice-browser](https://github.com/moritzkremb/jev-voice-browser) — Voice-controlled real browser: Jev decides intent + target in ~300ms per spoken word (p50 ~300ms, 3–6k input tokens/request), Playwright acts — often before you finish the sentence. 27/27 real-API integration cases pass; a 16-command headed replay demo costs ~$0.01 (measured 2026-09-17).
+- [kyegomez/open-jev](https://github.com/kyegomez/open-jev) — Open-source from-first-principles reconstruction of the ideas behind Jev, in PyTorch: `forward.py`, an `open_jev` package, and `example.py` (created 2026-09-21).
+- [qs-lll/twitter-jev-guard](https://github.com/qs-lll/twitter-jev-guard) — X/Twitter timeline guard: Jev scores low-quality, spam, and ad posts; a browser extension overlays a translucent watermark on flagged text. Ships extension + server (created 2026-09-21).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
