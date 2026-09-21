@@ -5,7 +5,7 @@
 
 A curated list of resources for **Jev** — TypeSafe AI's "System One" model that returns typed, calibrated decisions instead of text.
 
-Jev doesn't chat. You send it structured state; it returns a probability distribution over your predefined options in 70–500ms, at **$0.042 per million input tokens with output free**. It was built by Diogo Almeida (ex-OpenAI, co-inventor of RLHF/ChatGPT), emerged from stealth in September 2026 with $40M in funding, and is currently in waitlist-only early access.
+Jev doesn't chat. You send it structured state; it returns a probability distribution over your predefined options in 70–500ms, at **$0.042 per million input tokens with output free**. It was built by Diogo Almeida (ex-OpenAI, co-inventor of RLHF/ChatGPT), emerged from stealth in September 2026 with $40M in funding, and **went generally available on 2026-09-21**: no waitlist, $5 starter credits (~120M tokens), with Vercel, Cloudflare, LangChain and Langfuse already adding it to their stacks (per Indian Express).
 
 This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark Chinese edge-AI hardware and run our own real-measurement Jev experiments (300 real API calls, real latency, real bills). Entries with our own measured numbers are marked 📊.
 
@@ -27,7 +27,7 @@ This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark
 
 ## Official
 
-- [typesafe.ai](https://typesafe.ai/) — Official site, waitlist signup.
+- [typesafe.ai](https://typesafe.ai/) — Official site (generally available since 2026-09-21; $5 starter credits).
 - [Quickstart](https://docs.typesafe.ai/introduction/quickstart) — Official docs: `POST /v1/systemone`, question types (`choice` up to 255 options, `noul` yes/no, `score`).
 - [@typesafeai on X](https://x.com/typesafeai) — Official announcements.
 - [Founder launch thread](https://x.com/CompleteSkeptic/status/2099925682726002904) — Diogo Almeida introduces Jev and RLCD.
@@ -138,6 +138,7 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 
 ## News & Articles
 
+- [Indian Express: "Meet Jev" (2026-09-21)](https://indianexpress.com/article/technology/artificial-intelligence/meet-jev-new-ai-model-from-chatgpt-inventor-10887591/) — General-availability announcement: waitlist dropped, access starts at $5 in credits (~120M tokens); Vercel, Cloudflare, LangChain and Langfuse have added Jev to their stacks.
 - [MarkTechPost: "TypeSafe AI Releases Jev" (2026-09-19)](https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/) — Best single roundup: pricing fine print, community projects, Vercel/Bryo/Droidrun data points.
 - [The Rundown: "TypeSafe Jev AI decisions software"](https://www.therundown.ai/news/typesafe-jev-ai-decisions-software)
 - [RuntimeWire: "TypeSafe Jev System One AI model early access"](https://runtimewire.com/article/typesafe-jev-system-one-ai-model-early-access)
