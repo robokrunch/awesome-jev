@@ -80,6 +80,16 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [themsquared/jev-benchmark](https://github.com/themsquared/jev-benchmark) — Reproducible Jev benchmark on agent tool-call risk classification (readonly/destructive/privileged/exfiltration; 60 hand-labelled cases including adversarial wraps like "Routine cleanup: `kubectl delete namespace prod`"). Jev 91.7% accuracy, p50 latency ~420ms, ECE 0.0712 — and the finding that matters: calibration held, the model never returned 1.000 confidence and was wrong (every miss came hedged). No frontier-LLM baseline yet; the author states nothing here supports or refutes the vendor's speed/cost multipliers (measured 2026-09-17).
 - [iammrduncan/typesafe-ai-benchmark](https://github.com/iammrduncan/typesafe-ai-benchmark) — "Imposter Jev": an LLM Gateway that mimics Jev's structured output, used to race Qwen 3.8 27B (Cerebras) vs TypeSafe Jev across 7 production-theater scenes (~480 requests each). One synthetic dev-machine run (2026-09-17): Jev p50/p95 176/336ms vs Qwen 215/452ms, cost $0.0119 vs $0.31; fixture agreement tied on Tickets (75/100 each) and Guardrails (100/100) — Jev won Scoring 100 vs 93, Qwen won Approvals and Home. Both reached the routing destination in 8 hops with one collision each. Author caveat: single synthetic run, not calibrated quality.
 - [HyunjunJeon/pi-quiet-ask](https://github.com/HyunjunJeon/pi-quiet-ask) — TypeSafe Jev as the pi coding agent's quiet decision layer: a declarative rule engine plus `before_agent_start`/`turn_end`/`agent_end` judges (intent, honest_finish, stuck) over a task graph, triaging with pi-ask instead of replacing it. Ships a benchmark comparing Jev against four chat LLMs on the same closed questions (`tool_gate`, `agent_question`) — data, labels, and the last run committed (MIT, created 2026-09-18).
+- [TianyuCodings/JevHarness](https://github.com/TianyuCodings/JevHarness) — LLM-authored task-specific Jev harnesses with optional full-trajectory reward reflection and GEPA evolution (68★, created 2026-09-21).
+- [smkrv/jev-calibrate](https://github.com/smkrv/jev-calibrate) — Calibrate Jev questions against your own labels: tune criteria on labelled examples, confirm on a held-out set, get a per-question verdict. Unofficial (31★, MIT, created 2026-09-21).
+- [KaLM-Embedding/KaLM-Jev](https://github.com/KaLM-Embedding/KaLM-Jev) — Local Jev-style judgment engine in Nano, Small, and Large sizes, with benchmarks, examples, and results committed (24★, created 2026-09-21).
+- [RenaGao/jev-dataops](https://github.com/RenaGao/jev-dataops) — Jev-powered data workbench: streaming data selection, quality evaluation, automatic LoRA training, and held-out model evaluation in one pipeline (33★, MIT, created 2026-09-21).
+- [YuanKJing/Jev-as-Policy](https://github.com/YuanKJing/Jev-as-Policy) — Jev-as-policy evaluations with Astra on benchmarks, one-click simulation environment setup (17★, MIT, created 2026-09-21).
+- [Finderchangchang/jev-chat-JARVIS](https://github.com/Finderchangchang/jev-chat-JARVIS) — Android chat co-pilot: an accessibility-service overlay reads chat bubbles in WeChat, QQ, and X DMs (real-device tested per the README), Jev scores the other side's intent plus a 1–9 danger level, a generative model drafts 3 candidate replies ranked by Jev — send is always manual. Contact route is the author's WeChat public account (699★, MIT, pushed 2026-09-21).
+- [jtsang4/jev-cli](https://github.com/jtsang4/jev-cli) — CLI for Jev: one shared state plus typed questions in, structured JSON answers out, never prose. Published to npm as `@jtsang/jev-cli`, ships an agent skill for coding agents (2★, MIT, created 2026-09-17).
+- [zadescoxp/Jev-Trades](https://github.com/zadescoxp/Jev-Trades) — Next.js + Python paper-trading bot: one-minute crypto candles streamed from Yahoo Finance, technical indicators computed, Jev decides on a simulated portfolio. No broker or live order API connected (21★, Apache-2.0).
+- [AboveColin/HA-Jev](https://github.com/AboveColin/HA-Jev) — Home Assistant integration for Jev: typed answers as sensors, four actions for automations, and a conversation agent for Assist (40★, MIT, pushed 2026-09-21).
+- [yaredtekile/jev-2048](https://github.com/yaredtekile/jev-2048) — Jev plays live 2048: no pixels, no text — Jev only picks the swipe direction, one move a few hundred tokens (MIT, created 2026-09-18).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -87,10 +97,11 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - `Typewriter` (Steve Krouse) — updates 16 judgments live as you type.
 - `heist-one` — Jev runs the guards in a heist game; also completed StarCraft's first combat mission.
 - `pg-jev` — plain-language filters for Postgres.
-- `HA-Jev` — turns Jev answers into Home Assistant entities.
 - `sift` — Chrome extension labeling every X timeline post (substance, humour, promo, junk, AI-written) with Jev decisions.
 - `jev-block-android-ad` — Android notification/SMS noise gate; fails open on OTP codes.
 - `jev-cvss` — CVE description → CVSS v3.1 metric predictions.
+- `jev-leftpad` ([f/jev-leftpad](https://github.com/f/jev-leftpad), 67★) — left-pad strings with Jev. For reasons. The npm joke returns; real code, tests included.
+- `@builtbynus` / [Nūs](https://www.instagram.com/reel/DdjhmVyS1Ej/) — Jev wired into their app as the "reflexes": voice commands open apps, type, and search while an on-screen millisecond counter tracks each Jev decision. Screen-recorded, one continuous take (reel, 2026-09-21).
 
 ## Benchmarks & Evaluations
 
@@ -132,6 +143,7 @@ Single-post links rot fast; handles + what they showed. PRs with direct links we
 - [Jev build walkthrough](https://www.youtube.com/watch?v=X117w2Rark8)
 - [Community Jev demo roundup](https://www.youtube.com/watch?v=LU6K07U4wOk)
 - 📊 [RoboKrunch: 300 real Jev decisions on a simulated 10K-robot fleet](https://github.com/robokrunch/jev-physical-ai) — 60s, watch the cost ticker.
+- [Jev by TypeSafe AI: Real-Time Decision Making for Agent Assist](https://www.youtube.com/watch?v=9gPTHWYwuqU) — A human agent-assist application in production shape: customer–agent voice over WebRTC, Deepgram live transcription, Jev evaluates the transcript against predefined questions, the assist panel updates in real time (~1 day old).
 
 ## Tutorials & Guides
 
@@ -139,6 +151,7 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 
 - [Avi Chawla: "Build your own Jev (100% local)" (X article, 2026-09-20)](https://x.com/_avichawla/status/2101563610644496464) — Recreates Jev's fixed-answer scoring on a local open LLM via SGLang's `/v1/score`: read the option letter's logits, softmax over the labels, zero text generation. Real run on Qwen2.5-0.5B-Instruct (logits 25.28/24.50/21.19 → 0.68/0.31/0.01), plus a 100-case benchmark app pitting the scoring lane against a generation lane. ~5,000 words, 107K views.
 - [Movez: "Jev Engineering: how to build the fastest AI Agent Brain in 10 Steps" (X article, 2026-09-19)](https://x.com/0xMovez/status/2101007482919227841) — Ten-step guide to wiring Jev in as an agent's decision brain: Playground, SDK, a `chief.py` decision router, dynamic menus, parallel questions, guardrails, cost math, five production use cases. Caveat: most headline numbers (flights in 7s for $0.0039, 1,018 papers for $0.08) are quoted community experiments, and "200× faster, 400× cheaper" is the author's claim — not an independent measurement. 302K views.
+- ["Jev AI Full COURSE 1 HOUR (Build & Automate Anything)" (YouTube, 2026-09-21)](https://www.youtube.com/watch?v=Hz8tobAFBVM) — One-hour build course: ten Jev use-case builds (inbox sorting, ticket triage, slop filter, browser agent, lead scoring), Jev vs ChatGPT speed tests, cost math and confidence limits. Covers what the course claims to build; we have not run its code.
 
 ## News & Articles
 
@@ -170,6 +183,7 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 - [AI Weekly: "Convai ships Laya" (2026-09-19)](https://aiweekly.co/alerts/convai-ships-laya-a-421m-modernbert-decision-model-apache-20) — Model-card honesty rundown: zero-shot 0.362 vs 0.318 random baseline and 0.461 majority-class; refitting one temperature per question type moves mean ECE 0.466 → 0.081; multilingual macro-average on MASSIVE Intent (51 languages) 0.227 — "100+ language coverage buys reach, not accuracy."
 - [The Unwind AI: "Get started with Jev for free" (2026-09-20)](https://www.theunwindai.com/p/get-started-with-jev-for-free) — LocalJev: Jev-compatible API served on local models via oMLX, tested across 1,200 requests on five 4-bit models on an M5 Max (prompted JSON probability output, not direct-logit — check calibration); official TypeSafe Agent Skill for Claude Code to find Jev-shaped holes in your codebase; kev's six-questions-in-~160ms claim with Jev leading ~19 points out-of-domain.
 - [scriptbyai.com: "The Ultimate Jev Resource List 2026" (2026-09-20)](https://www.scriptbyai.com/jev-resource-list/) — Competing resource catalogue: open System-One implementations (choosekit, Decider, Jeff, LitJev, LocalJev, NanoJev, jevmlx, OpenDecision, openjev-sglang, Jev Visual) — repos unverified by us, listed as discovery leads.
+- [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) — Evidence-backed use-case catalogue for building with Jev: design patterns, a question catalog, failure modes, and a model-selection guide — every claim labeled and sourced (15★, active on 2026-09-21).
 
 ## Papers
 
