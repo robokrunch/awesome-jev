@@ -148,6 +148,7 @@ Single-post links rot fast; handles + what they showed. PRs with direct links we
 - [Community Jev demo roundup](https://www.youtube.com/watch?v=LU6K07U4wOk)
 - 📊 [RoboKrunch: 300 real Jev decisions on a simulated 10K-robot fleet](https://github.com/robokrunch/jev-physical-ai) — 60s, watch the cost ticker.
 - [Jev by TypeSafe AI: Real-Time Decision Making for Agent Assist](https://www.youtube.com/watch?v=9gPTHWYwuqU) — A human agent-assist application in production shape: customer–agent voice over WebRTC, Deepgram live transcription, Jev evaluates the transcript against predefined questions, the assist panel updates in real time (~1 day old).
+- [Gary Explains: "Jev From TypeSafe is a New Class of AI Model that is FAST and CHEAP — But There is a Caveat!" (YouTube, 2026-09-19)](https://www.youtube.com/watch?v=qdji39XXgEY) — Technical explainer on what Jev is and isn't: a model that understands natural language but answers with structured responses + confidence instead of text (the caveat: it's not an LLM).
 
 ## Tutorials & Guides
 
@@ -200,6 +201,7 @@ None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-20.
 - [HN: Jev launch discussion](https://news.ycombinator.com/item?id=49761730)
 - [HN: Jev technical discussion](https://news.ycombinator.com/item?id=49762040)
 - [madewithjev.com](https://madewithjev.com/) — Demo hub.
+- [DAIR.AI Academy: "Built with Jev"](https://academy.dair.ai/resources/jev-field-notes) — Community gallery of Jev demos, experiments and build ideas curated by DAIR.AI Academy (Elvis Saravia's community).
 - [jevable.com](https://jevable.com/) — Curated gallery of Jev demos with per-project X view counts and category filters (spotted 2026-09-21 via @choi.openai).
 
 ## Contributing
