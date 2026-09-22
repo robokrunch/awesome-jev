@@ -92,6 +92,20 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [yaredtekile/jev-2048](https://github.com/yaredtekile/jev-2048) — Jev plays live 2048: no pixels, no text — Jev only picks the swipe direction, one move a few hundred tokens (MIT, created 2026-09-18).
 - [timpratim/macbrow](https://github.com/timpratim/macbrow) — Voice-controlled Mac + browser (108★, MIT, pushed 2026-09-21): Gradium streaming STT → Jev picks the tool + its arguments in one request (~300ms) → AppleScript → Gradium TTS; the browser loop is jev-ultrafast. Measured on the author's machine: "add the best vacuum cleaner to my Amazon cart" in 4 steps / 11s, "play the Love Hypothesis trailer" from end of speech to video playing in 1.6s.
 - [fhshaik/typesafe-mario](https://github.com/fhshaik/typesafe-mario) — Jev agent plays Super Mario Bros from structured emulator state (330★, created 2026-09-16).
+- [Roasbeef/jevlar](https://github.com/Roasbeef/jevlar) — Typed, correct-by-construction Jev decisions for Go: batch typed questions through `POST /v1/systemone` with Go types wired to Jev primitives (real Go client + tests, created 2026-09-22).
+- [neilbauman21-hub/verdict](https://github.com/neilbauman21-hub/verdict) — Typed decisions with abstention over any causal LM: one forward pass, no autoregressive generation (created 2026-09-22).
+- [tomtyiu/Jev-decision-plugin](https://github.com/tomtyiu/Jev-decision-plugin) — Codex plugin that turns noisy input into small, typed, calibrated decisions (created 2026-09-22).
+- [gdamiani1/jev-feed-triage](https://github.com/gdamiani1/jev-feed-triage) — Chrome extension: Jev scores which LinkedIn and Reddit posts are worth your time (created 2026-09-22).
+- [LBDavid98/jevidence](https://github.com/LBDavid98/jevidence) — Measure an agent or a prompt with a panel of typed questions, judged by Jev (created 2026-09-22).
+- [yoichiojima-2/deslop](https://github.com/yoichiojima-2/deslop) — Score web pages for ads, slop, SEO and second-hand content with TypeSafe Jev (created 2026-09-22).
+- [FahadArfin/Jev_Unreal](https://github.com/FahadArfin/Jev_Unreal) — Typed Jev decisions and a guarded MCP workflow for the Unreal Engine editor (created 2026-09-22).
+- [AgriciDaniel/jev-seo](https://github.com/AgriciDaniel/jev-seo) — Live SEO audit for any website from one homepage URL, judged by Jev (created 2026-09-22).
+- [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) — IRS tax-document page classifier on Jev decisions: author reports 100% strict accuracy across 261 forms at ~$0.001/page — 34× cheaper and 6× faster than their prior LLM pipeline (author's claim, 341★, created 2026-09-18).
+- [sosopop/jev_stock](https://github.com/sosopop/jev_stock) — Hong Kong stock direction forecasting: AKShare fetches target + HSI + HSTECH, Jev answers up/flat/down as Choice, with probability-calibration treatment and standalone HTML reports (12★, created 2026-09-17).
+- [Gamma-Software/jev-signals-lab](https://github.com/Gamma-Software/jev-signals-lab) — Paper-only Jev trading-signals research POC: one market snapshot → 12 independent Jev questions → in-code rule engine (created 2026-09-19).
+- [IslamBaraka90/jev-typesafe-real-financial-use-cases](https://github.com/IslamBaraka90/jev-typesafe-real-financial-use-cases) — "Jev Lab": 50 financial demos (ledgers, fraud, wallets, portfolios, trades, filings, strategies) plus a backtest lab replaying Jev trade decisions on daily candles (created 2026-09-19).
+- [adilmoujahid/jev-banking77-demo](https://github.com/adilmoujahid/jev-banking77-demo) — Single-page Next.js app classifying PolyAI BANKING77 customer-support queries with Jev (created 2026-09-19).
+- [geranitin/TYPESAFE_JEV](https://github.com/geranitin/TYPESAFE_JEV) — Jev experiments: user-upgrade triage with confidence gating and repeated-call stability checks, seven scenario examples (created 2026-09-19).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -123,6 +137,7 @@ Numbers with sources. Vendor claims are labeled as such.
 - [Matthew O'Riordan's Pong latency showdown (via RuntimeWire)](https://runtimewire.com/article/diogo-almeida-typesafe-jev-40m-seed-pong) — Four lanes, same game state, recorded 2026-09-17 via Vercel AI Gateway: Jev averaged **227ms/decision (p95 400ms)**; Gemini 3.8 Flash 3.2s, Claude Haiku 4.5 2.5s, GPT-5.6 Sol 3.5s. In the first 12s Jev returned 47 decisions vs 3/2/2 for the chat models. Caveat: a latency demo, not a strategy test — the chat models picked the correct move 95–100% of the time, and every model got structured state (no vision).
 - [FazalAAli/jev-robotics-demo](https://github.com/FazalAAli/jev-robotics-demo) — Jev vs Claude Opus 5 driving a simulated Franka arm + Allegro hand in MuJoCo (stack a blue cube on a red one): one recorded run each — Jev 19.1s / $0.0006 vs Opus 158.8s / $0.75 (clean first-try Opus runs took ~55s / $0.19). Design: code owns the physics, Jev owns the judgment.
 - [anessbelbati/jev-rerank-bench](https://github.com/anessbelbati/jev-rerank-bench) — Can a decision model beat dedicated rerankers? Jev vs Cohere Rerank 4 vs ZeroEntropy zerank-2 vs a chat-model baseline: 14 datasets, every raw API response saved, bootstrap ranges on every gap (MIT). Ranking average: Jev 0.692 vs Cohere Pro 0.691 (no winner declared); equal query weighting puts Cohere ahead; Jev better on the NevIR negation test. Measurements began 2026-09-16.
+- [simonmesmith/jev-banking77-experiment](https://github.com/simonmesmith/jev-banking77-experiment) — Reproducible BANKING77 classification eval: Jev 92.40% accuracy vs 93.66% for a fine-tuned BERT (−1.26 pt), US$0.44 total test cost (created 2026-09-18).
 
 ## Demos on X
 
@@ -191,6 +206,7 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 - [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) — Evidence-backed use-case catalogue for building with Jev: design patterns, a question catalog, failure modes, and a model-selection guide — every claim labeled and sourced (15★, active on 2026-09-21).
 - [Pranay Suyash (Medium): "Jev's 193.6× Faster, 444.6× Cheaper Claim: What TypeSafe's Workflow Eval Actually Measures" (2026-09-21)](https://pranaysuyash.medium.com/jevs-193-6-faster-444-6-cheaper-claim-what-typesafe-s-workflow-eval-actually-measures-68b8529e822b) — Takes the headline multipliers apart: the benchmark decomposes the task before calling the model, so it tests a way of building software as much as a model. Walks through the four published workflows (security-incident, agent-trace, invoice, customer-service) and the three primitives (Noul, Choice, Score).
 - [Kingy AI: "TypeSafe Jev Review: The AI Model That Doesn't Generate Text" (2026-09-17)](https://kingy.ai/blog/typesafe-jev-review-the-ai-model-that-doesnt-generate-text/) — Document-and-eval audit with explicit scope limits (no live API key at publication): reconstructs the workflow-eval table (Jev 67.8% aggregate at $0.0004/0.4s vs Sol 74.1% at $0.0836/23.3s over 711 cases) and shows the homepage "193.6× faster, 444.6× cheaper" headline cannot be reconstructed from the rounded table — quote as TypeSafe's workload-specific claims, not universal multipliers. Also frames "zero hallucinations" as a type-safety guarantee, not a correctness one.
+- [matt-harness: TypeSafe Jev claim-by-claim research note (2026-09-18)](https://github.com/wasikarn/matt-harness/blob/HEAD/docs/research/typesafe-ai-system-one-jev-2026-09-18.md) — Research verdict: the company, docs site and people are real (live docs with ~35 fetchable pages, open-source MIT Python adapter) — but the performance numbers are self-reported, with no independent benchmark or third-party citation on the docs site. Treat "does the product exist" and "are the claims verified" as separate questions.
 
 ## Papers
 
@@ -203,6 +219,7 @@ None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-20.
 - [madewithjev.com](https://madewithjev.com/) — Demo hub.
 - [DAIR.AI Academy: "Built with Jev"](https://academy.dair.ai/resources/jev-field-notes) — Community gallery of Jev demos, experiments and build ideas curated by DAIR.AI Academy (Elvis Saravia's community).
 - [jevable.com](https://jevable.com/) — Curated gallery of Jev demos with per-project X view counts and category filters (spotted 2026-09-21 via @choi.openai).
+- [drillan: "Jev finance & trading projects" survey (2026-09-20)](https://gist.github.com/drillan/6916b16e8ea31a8ec36c8f59d6483150) — Curated survey of Jev finance repos (jev_stock, jev-signals-lab, the 50-use-case Jev Lab, BANKING77 experiment + demo, tax-doc-classifier) — empty/placeholder repos flagged as such.
 
 ## Contributing
 
