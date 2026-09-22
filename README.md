@@ -106,6 +106,9 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [IslamBaraka90/jev-typesafe-real-financial-use-cases](https://github.com/IslamBaraka90/jev-typesafe-real-financial-use-cases) — "Jev Lab": 50 financial demos (ledgers, fraud, wallets, portfolios, trades, filings, strategies) plus a backtest lab replaying Jev trade decisions on daily candles (created 2026-09-19).
 - [adilmoujahid/jev-banking77-demo](https://github.com/adilmoujahid/jev-banking77-demo) — Single-page Next.js app classifying PolyAI BANKING77 customer-support queries with Jev (created 2026-09-19).
 - [geranitin/TYPESAFE_JEV](https://github.com/geranitin/TYPESAFE_JEV) — Jev experiments: user-upgrade triage with confidence gating and repeated-call stability checks, seven scenario examples (created 2026-09-19).
+- [khordoo/jev-reflex-autonomy-lab](https://github.com/khordoo/jev-reflex-autonomy-lab) — Multi-drone autonomy lab: TypeSafe Jev as the System 1 reflex layer (1–20 drones, canvas sim); an optional System 2 planner gives one-use strategic guidance through OpenRouter when Jev's confidence drops below threshold. Seeded scenarios, per-drone latency/confidence telemetry, JSON mission export (13★, pushed 2026-09-21).
+- [tanaypadar/gpt-vs-jev](https://github.com/tanaypadar/gpt-vs-jev) — "AI Arena" side-by-side demo (live: gptvsjev.vercel.app, MIT): the same input goes to GPT for natural-language text and to JEV for structured Noul answers; custom live runs limited to 2/visitor/day.
+- [0xnairb/research_desk](https://github.com/0xnairb/research_desk) — TypeSafe Jev demonstration for news/ticker analysis: live yfinance company profiles and headlines read into ranked, grounded, routed trade ideas; the Requests tab shows the exact state and questions behind every number (pushed 2026-09-18).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
