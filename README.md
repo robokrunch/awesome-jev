@@ -9,7 +9,7 @@ Jev doesn't chat. You send it structured state; it returns a probability distrib
 
 This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark Chinese edge-AI hardware and run our own real-measurement Jev experiments (300 real API calls, real latency, real bills). Entries with our own measured numbers are marked 📊.
 
-> **No official paper.** TypeSafe has not published a formal paper on Jev as of 2026-09-20. If one appears, it goes here first.
+> **No official paper.** TypeSafe has not published a formal paper on Jev as of 2026-09-22. If one appears, it goes here first.
 
 ## Contents
 
@@ -33,6 +33,7 @@ This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark
 - [Founder launch thread](https://x.com/CompleteSkeptic/status/2099925682726002904) — Diogo Almeida introduces Jev and RLCD.
 - [Jev on OpenRouter](https://openrouter.ai/typesafe/jev-1.13) — `typesafe/jev-1.13`, $0.042/M input, $0/M output, 32K context. Note: OpenRouter exposes Jev via its decisions endpoint, not `/chat/completions`.
 - [Jev on Cloudflare](https://developers.cloudflare.com/ai/models/typesafe/jev/) — Workers AI model page.
+- [Jev 1.13 on LLM Gateway](https://llmgateway.io/models/jev-1.13.0) — Third-party provider listing: $0.042/M input, $0/M output, 64k context, OpenAI-compatible API with automatic provider routing and fallback.
 - [$40M stealth emergence (Business Wire)](https://www.businesswire.com/news/home/20260915525333/en/TypeSafe-AI-Emerges-From-Stealth-With-%2440M-in-Funding-With-New-Model-for-Composable-AI) — Funding announcement, September 2026.
 
 ## Models & API
@@ -130,6 +131,7 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [Devin-AXIS/jev-dsh-decision](https://github.com/Devin-AXIS/jev-dsh-decision) — Jev structured-decision plugin for agent harnesses: native DeepSeek Harness support, plus OpenCode/Codex via iPolloWork (94★, created 2026-09-20).
 - [danvega/jev-spring-boot-starter](https://github.com/danvega/jev-spring-boot-starter) — Spring Boot starter for TypeSafe Jev (Spring MVC + RestClient) (32★, created 2026-09-20).
 - [MotherDuck: Prompt_jev()](https://motherduck.com/blog/motherduck-supports-jev/) — Jev decisions inside MotherDuck SQL ([HN](https://news.ycombinator.com/item?id=49800830)).
+- [SuperQode: Jev as a harness for your code and workflows](https://super-agentic.ai/resources/super-posts/jev-in-superqode-harness-with-jev-agent) — Decision layer for the "soft middle" of a permission stack: reviewed questions, typed answers, evidence you can hash; ships a live client on `api.typesafe.ai` ([Medium writeup](https://medium.com/superagentic-ai/jev-in-superqode-a-harness-for-your-code-and-workflows-with-jev-agent-aed62fa4c98d)).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -145,6 +147,7 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - `@datatramadan` — Jev plays Chrome Dino with live RUN/JUMP/DUCK probability + confidence telemetry; mid-video the screen switches to OpenRouter logs confirming `Jev 1.13` generations ([reel](https://www.instagram.com/reel/DdjkRDnyd5e/), 2026-09-21).
 - `@stilesja` — IVR demo built on Jev: live call transcript with real-time classification probabilities beside it ([Threads](https://www.threads.com/@stilesja/post/DdlPFiBDKn3), 2026-09-22).
 - `@nomadius.cyou` — "Browser Dealer by K2S": Zürich → London flight-search head-to-head, Jev live lane ([Threads](https://www.threads.com/@nomadius.cyou/post/DdjsSfigjLt), 2026-09-20).
+- `@evolving.ai` ([IG reel](https://www.instagram.com/reel/DdjIOcstTtn/), 2026-09-21, 12K likes) — Andy Gao's voice-controlled Mac assistant goes viral: Notes/Arc/Google/X/Photo Booth open before he finishes the sentence. Comments are technical — repo requests, determinism questions, "Astra does the same" skepticism. The build behind it is [moritzkremb/jev-voice-browser](#projects--code) above.
 
 ## Benchmarks & Evaluations
 
@@ -238,6 +241,10 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 - [scriptbyai.com: "The Ultimate Jev Resource List 2026" (2026-09-20)](https://www.scriptbyai.com/jev-resource-list/) — Competing resource catalogue: open System-One implementations (choosekit, Decider, Jeff, LitJev, LocalJev, NanoJev, jevmlx, OpenDecision, openjev-sglang, Jev Visual) — repos unverified by us, listed as discovery leads.
 - [aliaihub/awesome-jev-usecases](https://github.com/aliaihub/awesome-jev-usecases) — Evidence-backed use-case catalogue for building with Jev: design patterns, a question catalog, failure modes, and a model-selection guide — every claim labeled and sourced (15★, active on 2026-09-21).
 - [Pranay Suyash (Medium): "Jev's 193.6× Faster, 444.6× Cheaper Claim: What TypeSafe's Workflow Eval Actually Measures" (2026-09-21)](https://pranaysuyash.medium.com/jevs-193-6-faster-444-6-cheaper-claim-what-typesafe-s-workflow-eval-actually-measures-68b8529e822b) — Takes the headline multipliers apart: the benchmark decomposes the task before calling the model, so it tests a way of building software as much as a model. Walks through the four published workflows (security-incident, agent-trace, invoice, customer-service) and the three primitives (Noul, Choice, Score).
+- [Mathrubhumi English: "Jev AI Model Explained: Why Developers Choose Decision-Making AI" (2026-09-22)](https://english.mathrubhumi.com/technology/jev-ai-model-explained-decision-making-ai-fajsf1e6) — Mainstream-India explainer: three primitives, RLCD training, $0.042/M input with free output, and the no-waitlist GA move on 2026-09-21.
+- [GrowthR: "What Is Jev? TypeSafe's New AI Model"](https://growthr.com/resources/what-is-jev/) — Practitioner explainer with a trimmed `POST /v1/systemone` example; useful line that calibration is a claim about groups of predictions — "saying 0.8 means right ~80% of the time" says nothing certain about any single answer.
+- [dev.to: "Jev Does Not Replace the LLM. It Changes Who Owns the Decision" (2026-09-19)](https://dev.to/miruky/jev-does-not-replace-the-llm-it-changes-who-owns-the-decision-3n6) — Architecture piece: "System One" is TypeSafe's product term, not a standardized model taxonomy; notes `jev-latest` resolves to `jev-1.13.0` and the docs list a 64k request budget.
+- [dev.to: "TypeSafe AI Jev: An AI model that doesn't generate text – and is 200x faster" (2026-09-18)](https://dev.to/saaro_net/typesafe-ai-jev-an-ai-model-that-doesnt-generate-text-and-is-200x-faster-1ggo) — Community explainer on the three primitives (Choice / Score / Noul) and the parallel-forward-pass speed story.
 - [Kingy AI: "TypeSafe Jev Review: The AI Model That Doesn't Generate Text" (2026-09-17)](https://kingy.ai/blog/typesafe-jev-review-the-ai-model-that-doesnt-generate-text/) — Document-and-eval audit with explicit scope limits (no live API key at publication): reconstructs the workflow-eval table (Jev 67.8% aggregate at $0.0004/0.4s vs Sol 74.1% at $0.0836/23.3s over 711 cases) and shows the homepage "193.6× faster, 444.6× cheaper" headline cannot be reconstructed from the rounded table — quote as TypeSafe's workload-specific claims, not universal multipliers. Also frames "zero hallucinations" as a type-safety guarantee, not a correctness one.
 - [matt-harness: TypeSafe Jev claim-by-claim research note (2026-09-18)](https://github.com/wasikarn/matt-harness/blob/HEAD/docs/research/typesafe-ai-system-one-jev-2026-09-18.md) — Research verdict: the company, docs site and people are real (live docs with ~35 fetchable pages, open-source MIT Python adapter) — but the performance numbers are self-reported, with no independent benchmark or third-party citation on the docs site. Treat "does the product exist" and "are the claims verified" as separate questions.
 - [Zentor: "What Is TypeSafe Jev? Typed Agent Decisions" (updated 2026-09-21)](https://zentor.ai/blog/what-is-typesafe-jev) — Vendor explainer (Zentor sells workflow automation) walking through the request shape — state plus typed questions (`choice`, `score`, `noul`) evaluated in parallel, "adding questions barely changes the response time" — with TypeSafe docs quotes checked 2026-09-18.
@@ -248,7 +255,7 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 
 ## Papers
 
-None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-20. This section will not be padded with loosely-related arXiv links — when the paper drops, it goes here.
+None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-22. This section will not be padded with loosely-related arXiv links — when the paper drops, it goes here.
 
 ## Community
 
