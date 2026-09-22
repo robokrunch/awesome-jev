@@ -9,7 +9,7 @@ Jev doesn't chat. You send it structured state; it returns a probability distrib
 
 This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark Chinese edge-AI hardware and run our own real-measurement Jev experiments (300 real API calls, real latency, real bills). Entries with our own measured numbers are marked 📊.
 
-> **No official paper.** TypeSafe has not published a formal paper on Jev as of 2026-09-22. If one appears, it goes here first.
+> **No official paper.** TypeSafe has not published a formal paper on Jev as of 2026-09-23. If one appears, it goes here first.
 
 ## Contents
 
@@ -140,6 +140,9 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [hosseintoussi/jev-flappy-bird](https://github.com/hosseintoussi/jev-flappy-bird) — Jev plays Flappy Bird, one flap-or-wait decision ~3×/second; the bird does what Jev says, and the game never waits — it keeps running while the answer is in flight. API key stays on the local server (pushed 2026-09-20).
 - [lbotinelly/jev-little-airways](https://github.com/lbotinelly/jev-little-airways) — Show-and-tell Jev capability study: three.js WebGPU air-traffic-control demo wired to Jev (`jev-1.13.0` at recording), plus a live-captured research dossier of Jev API behavior, pricing and patterns (MIT, created 2026-09-17).
 - [ekzhang/openjev-sglang](https://github.com/ekzhang/openjev-sglang) — Jev-compatible API endpoint built on open models (prefill-only, SGLang), 268★: ships resumable evals with per-run manifests, including a BoolQ run — Jev via OpenRouter on 3,270 examples, 90% confidence threshold: 2,278 examples, 63 errors, 97.23% accuracy (mean probability 95.55%); 99% threshold: 366 examples, 1 error, 99.73%. Reported Jev cost $0.0595 (pushed 2026-09-21).
+- [edwardyen724-g/jev-compactor](https://github.com/edwardyen724-g/jev-compactor) — Context compaction + safety gating for AI agents via Jev: keeps messages verbatim (no summarization), drops what Jev judges irrelevant to the current goal, and catches destructive commands like `rm -rf` in the same ~300ms pass. TypeScript lib + CLI + MCP server, wraps OpenAI/Anthropic/LangChain clients (MIT, created 2026-09-19).
+- [jomatsu/pi-jev-auto-mode](https://github.com/jomatsu/pi-jev-auto-mode) — Jev-backed auto mode for the pi coding agent: semantically auto-approves shell commands, ships as an npm package (MIT, 23★, created 2026-09-17). Honest limitation section in the writeup: 18 fixtures is a calibration set, not a benchmark, and uncertain calls pass by default ([dev.to](http://dev.to/jomatsu/jev-pi-a-probability-gate-for-my-coding-agents-shell-commands-95d)).
+- [zhangcy122/OpenJev](https://github.com/zhangcy122/OpenJev) — Open-source Jev alternative: typed `Choice`/`Noul`/`Score` API on open LLMs (Qwen3, DeepSeek-V4.1, Gemma 4, gpt-oss) with constrained-logprob calibration and a temperature/Platt-scaling layer (22★, created 2026-09-20).
 
 **Spotted in the wild** (seen on X / in roundups, repo link wanted — PRs welcome):
 
@@ -180,6 +183,7 @@ Numbers with sources. Vendor claims are labeled as such.
 - [gemanor/jev-code-review-benchmark](https://github.com/gemanor/jev-code-review-benchmark/blob/HEAD/README.md) — Jev (jev-1.13.0) vs Gemini Flash vs Claude Fable (medium reasoning) on rule-based Python code review, run 2026-09-17 (1,080 calls): per 1,000 reviews Jev $0.043 vs Flash $1.94 vs Fable $11.78; median 0.75s vs 3.59s vs 4.31s; correctness 98.0% vs 100% for both. Caveat: small constructed examples with explicit rules — not production PR review.
 - [@DanRWilloughby "Sniff Test" (via doco.page)](https://doco.page/s/CtgDAZsecX1tr3y8XMA7pNnpDedJCPzs) — Jev-as-judge AI-flavor linter raced against mainstream models on writing checks: Jev 78.8% accuracy / 182ms median / $0.013 per 1K checks vs Claude Haiku 4.5 82.5% / 1,971ms / $0.43, Sonnet 5 90% / 6,083ms / $1.34, Opus 5 96.3% / 6,532ms / $3.08, GPT-5.6-sol 91.3% / 4,428ms / $1.64. 10.8× faster and 33× cheaper than the closest rival, 3.7pp less accurate — third-party test reported via the article, protocol not published.
 - [Norwegian hearing-documents test (via doco.page)](https://doco.page/s/CtgDAZsecX1tr3y8XMA7pNnpDedJCPzs) — Independent developer test on 24 Norwegian hearing documents + 11 questions: Jev $0.22 per 1K documents vs DeepSeek V4.1 Flash $1.31; median 0.32s vs 2.7s; calibration direction right (0.9–1.0 confidence band: 98% agreement with the reference model, 0.1–0.3 band: 4%). Counterintuitive finding: stricter question wording made calibration worse (ECE rose 0.040 → 0.116).
+- [TrueStandard independent test (reported via Karmactive, 2026-09-22)](https://www.karmactive.com/typesafe-jev-ai-decision-model-explainer-193x-speed/) — Third-party numbers with tempered framing: a single decision ~1.7× faster than a comparable LLM call; a multi-step workflow ~100× in one test configuration — the 193× figure is TypeSafe's own best case, not universal. Calibration held (accuracy rises in higher-confidence buckets); on a 77-class intent task Jev scored ~73% vs OpenAI's ~85%. Test protocol not published.
 
 ## Demos on X
 
@@ -266,9 +270,12 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 - [dev.to: "Fast Decisions in Agent Workflows: Laya vs TypeSafe Jev" (2026-09-22)](http://dev.to/x_z_e87b809fe996bc463fe4a/fast-decisions-in-agent-workflows-laya-vs-typesafe-jev-3ago) — Independent JevLab write-up comparing open-source Laya to hosted Jev: Laya ~7.8× faster locally (32.8ms vs Jev's published 236–276ms) with tighter calibration after a temperature refit (ECE 0.081 vs 0.246). Honest about the setup: these are vendor/third-party tables, not a controlled A/B — "accuracy without thresholding is an illusion"; the shipping question is confidence thresholds and fail-closed handoffs.
 - [Doco: "An AI That Doesn't Write a Single Word—How Is It 193x Faster and 444x Cheaper" (2026-09-20)](https://doco.page/s/CtgDAZsecX1tr3y8XMA7pNnpDedJCPzs) — 12,000-word independent deep dive: reconstructs the four workflow evals from TypeSafe's own data (Jev 67.8% avg vs frontier 68–74%), quotes 36Kr/Tencent's verdict that the real comparison should also include Flash models + constrained decoding and traditional classifiers ("no such test exists yet"), and reports two third-party tests not covered elsewhere — @DanRWilloughby's Sniff-Test linter table (Jev 78.8% / 182ms / $0.013 per 1K vs Haiku 82.5% / 1,971ms / $0.43) and a 24-Norwegian-hearing-document test (Jev $0.22/K docs, median 0.32s, stricter question wording worsened ECE 0.040 → 0.116). Also covers the founder-narrative correction (PC Watch/Community Note on the "co-invented ChatGPT" claim).
 
+- [Apex36: "What Is TypeSafe Jev? The ChatGPT Co-Creator's Silent AI"](https://www.apex36tech.com/blog/what-is-typesafe-jev-the-chatgpt-co-creators-silent-ai) — Honest architecture + economics audit: quotes DataCamp's structured-output error rates (Jev 0% vs Terra 0.58%, Opus 5 5.73%, Haiku 4.5 45.5%); notes LangChain ships a `langchain-typesafe` package with a `TypeSafeClassifier` wrapper; frames the play as a "judge" layer 76× cheaper than the model it replaces — and warns that calibration is pinned to a floating `jev-latest` alias.
+- [Python Libraries (Substack): "Browser-Use Puts the Jev Model into a Browser Agent!"](https://pythonlibraries.substack.com/p/browser-use-puts-the-jev-model-into) — Walkthrough of the [jev-ultrafast](#projects--code) 7.1s Zurich→London demo: browser protocol calls dropped from 1,092 to 101; Jev picks the operation + element, a small LLM writes text only for `TYPE_TEXT` (author's reconstruction, not a lab benchmark).
+
 ## Papers
 
-None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-22. This section will not be padded with loosely-related arXiv links — when the paper drops, it goes here.
+None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-23. This section will not be padded with loosely-related arXiv links — when the paper drops, it goes here.
 
 ## Community
 
@@ -280,6 +287,7 @@ None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-22.
 - [drillan: "Jev finance & trading projects" survey (2026-09-20)](https://gist.github.com/drillan/6916b16e8ea31a8ec36c8f59d6483150) — Curated survey of Jev finance repos (jev_stock, jev-signals-lab, the 50-use-case Jev Lab, BANKING77 experiment + demo, tax-doc-classifier) — empty/placeholder repos flagged as such.
 - [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) — A competing curated Jev list (spotted 2026-09-22): alternative catalogue of projects, benchmarks and articles — worth cross-checking against ours for coverage gaps. Includes Mobile Jev (local Android agent via Mobilerun) and several pi- coding-agent extensions with experiment logs.
 - [JevTracks](https://jevtracks.com) — Community project directory (spotted 2026-09-22 via @sidneycur): lists 869 Jev builds pulled from X and GitHub, tagged by category. Caveat emptor: captions are auto-generated and uneven, and the site's "verified" label means only that a project passed an automated eligibility check — not that its claims were fact-checked.
+- [heyjunpenn/awesome-jev](https://github.com/heyjunpenn/awesome-jev) — A competing curated Jev catalogue claiming 640 open-source projects, "verified" by its maintainers (528★, added 110 projects on 2026-09-22). Worth cross-checking against ours for coverage gaps; their verification claims are unexamined by us — spot-check entries before citing them.
 
 ## Contributing
 
