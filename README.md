@@ -53,7 +53,7 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 - [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp) — MCP server for Jev decisions.
 - [SadiqOnGithub/jev-lab](https://github.com/SadiqOnGithub/jev-lab) — Experiments playground.
 - [tumf/jev-cli](https://github.com/tumf/jev-cli) — CLI for Jev.
-- [steventsao/jevzen](https://github.com/steventsao/jevzen) — Jev experiments.
+- [steventsao/jevzen](https://github.com/steventsao/jevzen) — MIT-licensed Chrome extension demo: switches unwanted X posts to zen/cat photos using Jev's returned probability. Supports direct TypeSafe, OpenRouter Decisions, and Cloudflare Jev with your own keys; keys stay in `chrome.storage.local`. No Chrome Web Store release — unpacked install only. API calls use your provider credits.
 - [zhuyansen/jev-search-rerank-eval](https://github.com/zhuyansen/jev-search-rerank-eval) — Search rerank evaluation with Jev.
 - [nekuda-ai/WindTunnel](https://github.com/nekuda-ai/WindTunnel) — Agent testing harness with Jev.
 - [Laya (ConvAI Innovations)](https://laya.convaiinnovations.com/) — Apache-2.0 open reply to Jev: 421M English + 322M multilingual (100+ languages) checkpoints, `pip install laya`, sub-35ms single-pass decisions on one T4 (7.2ms batched), zero API bill. Vendor reports 0.766 vs Jev's published 0.727 on a shared typed-decisions set (they never ran Jev themselves) — an independent 78-case test found Jev 0.974 vs Laya 0.590, Laya fastest at 30ms/case vs ~302ms for Jev (small sample).
@@ -189,6 +189,8 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 
 ## News & Articles
 
+- [Jock: "Jev Benchmark: TypeSafe's Model That Cannot Write a Word" (2026-09-21)](https://thoughts.jock.pl/p/jev-typesafe-system-one-model-benchmark-2026) — Independent hands-on benchmark: 40 support tickets through Jev vs four text-generating models. Jev was ~10× faster than Claude Fable 5.1 and ~329× cheaper, and beat Fable at guessing customer annoyance. Includes a real terminal transcript (403ms, $0.0000172 per call) and a fractional anger score (2.07 on calm→furious) used to sort queues.
+- [Doomers: "How Doomers Launched TypeSafe AI and Jev on X" (2026-09-21)](https://doomers.ai/work/typesafe-ai-case-study) — Launch-agency case study with third-party launch metrics: the Jev launch post reached ~38.5M views, 74K likes, ranking 4 of 675 tracked launches (Doomers' largest); Vercel reported Jev as the fastest-adopted model in AI Gateway history — ~13% of paid teams within 24h, 2× the GPT-5.6 family, 6× Fable 5.1. Vendor/agency figures, not lab benchmarks.
 - [Creative AI News: "Six Open Jev Clones, Four Different Jev Scores" (2026-09-21)](https://www.creativeainews.com/articles/open-jev-clones-benchmark-disagreement-2026/) — Six open Jev reproductions shipped within 48h of launch (Laya, SemIf, Bespoke Nimble, Kev-0.5B, Jevlike, DiffusionGemmaJev) — but four independent evaluations of the same Jev on the same public Banking77 benchmark put it at 87.0%, 83.2%, 77.8% and 76.3%: "The clone wave is not a race to reproduce a model. It is six teams reproducing six different targets."
 - [Indian Express: "Meet Jev" (2026-09-21)](https://indianexpress.com/article/technology/artificial-intelligence/meet-jev-new-ai-model-from-chatgpt-inventor-10887591/) — General-availability announcement: waitlist dropped, access starts at $5 in credits (~120M tokens); Vercel, Cloudflare, LangChain and Langfuse have added Jev to their stacks.
 - [MarkTechPost: "TypeSafe AI Releases Jev" (2026-09-19)](https://www.marktechpost.com/2026/09/19/typesafe-ai-releases-jev/) — Best single roundup: pricing fine print, community projects, Vercel/Bryo/Droidrun data points.
@@ -238,6 +240,7 @@ None. TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-20.
 - [DAIR.AI Academy: "Built with Jev"](https://academy.dair.ai/resources/jev-field-notes) — Community gallery of Jev demos, experiments and build ideas curated by DAIR.AI Academy (Elvis Saravia's community).
 - [jevable.com](https://jevable.com/) — Curated gallery of Jev demos with per-project X view counts and category filters (spotted 2026-09-21 via @choi.openai).
 - [drillan: "Jev finance & trading projects" survey (2026-09-20)](https://gist.github.com/drillan/6916b16e8ea31a8ec36c8f59d6483150) — Curated survey of Jev finance repos (jev_stock, jev-signals-lab, the 50-use-case Jev Lab, BANKING77 experiment + demo, tax-doc-classifier) — empty/placeholder repos flagged as such.
+- [AbdelStark/awesome-typesafe-jev](https://github.com/AbdelStark/awesome-typesafe-jev) — A competing curated Jev list (spotted 2026-09-22): alternative catalogue of projects, benchmarks and articles — worth cross-checking against ours for coverage gaps. Includes Mobile Jev (local Android agent via Mobilerun) and several pi- coding-agent extensions with experiment logs.
 
 ## Contributing
 
