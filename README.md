@@ -1188,6 +1188,8 @@ TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-27. This 
 
 - [arXiv:2609.29429 — "Just Ask Jev: Reinforcement Learning for Calibrated Decisions as a Zero-Shot Detector of AI Alignment Failures" (Guo et al., submitted 2026-09-25)](https://arxiv.org/abs/2609.29429) — RLCDAlignBench benchmarks Jev on ten alignment failures (sycophancy, jailbreaks, deception, prompt injection, hallucination, privacy violation, social bias, reward hacking, concealing uncertainty, power seeking) across 44 benchmarks and five target models. A single generic question reaches median AUROC 0.886 zero-shot, beating supervised baselines on most benchmarks; question wording matters little, the encoded context (fields that reveal the reference label) matters more; Jev also surfaces label defects in existing benchmarks and costs 63× less than LLM-judge scorers. Independent research — not authored by TypeSafe. ([Code & data](https://github.com/sumleo/RLCDAlignBench), 15★, MIT, real non-fork verified via GitHub API, created 2026-09-24)
 
+- [Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem](https://arxiv.org/abs/2609.30216) - A data-driven application ecosystem survey and analysis of 2,170 public Jev projects, recording early growth, application domains, and decision-use patterns. Non-peer-reviewed arXiv preprint; repository counts describe visible experimentation, not production adoption or model performance.
+
 ## Community
 
 - [HN: Jev launch discussion](https://news.ycombinator.com/item?id=49761730)
