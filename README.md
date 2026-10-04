@@ -917,6 +917,12 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 
 - [SouthCat196/jevmodel-examples](https://github.com/SouthCat196/jevmodel-examples) — Runnable examples for JevModel (a hosted playground/API for typed decisions: Choice classification, Score lead scoring, Noul human review): support classification, lead scoring and human-review flows; offline demo by default, `--live` makes one real API call. Explicitly an independent service, not affiliated with TypeSafe AI. Bilingual English/Chinese README. (1★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
 
+- [ResonTypoc/jev-test-prioritizer](https://github.com/ResonTypoc/jev-test-prioritizer) — Experimental CLI: Jev evaluates whether an AI-generated candidate test is worth retaining, returning an advisory keep/review/remove recommendation. Uses the official TypeSafe Python SDK (checked against `typesafe-sdk` 0.7.2) with four Score questions plus one Choice question; language-, framework- and runner-agnostic — it never executes tests, deletes files, or modifies source. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
+
+- [tjorourke/mail-triage-jev](https://github.com/tjorourke/mail-triage-jev) — Local AI Gmail triage on Apple Silicon Macs (no mail leaves the machine): junk gets labeled out of the inbox, VIPs / travel / questions get flagged, one label per customer company learned from your own labels. Runs Cloudflare Clef-flash, an open decision model with a Jev-compatible API — not TypeSafe's hosted Jev. Label-only (never deletes or sends); shadow mode tags but moves nothing. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
+
+- [iamhuangyinan-sys/AISoupGameWeb](https://github.com/iamhuangyinan-sys/AISoupGameWeb) — 海龟汤 ("turtle soup") lateral-thinking web game: you ask only yes/no/irrelevant questions and the host answers from TypeSafe Jev's probability distribution (e.g. yes 0.82 / irrelevant 0.11); DeepSeek cross-checks uncertain cases, and disagreements answer "not sure" instead of hallucinating. Keys live in browser localStorage only — the server never stores them. 30 built-in puzzles collected from public pages (not original). Chinese README. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
+
 ## Benchmarks & Evaluations
 
 Numbers with sources. Vendor claims are labeled as such.
