@@ -1365,6 +1365,8 @@ TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-27. This 
 
 - [pozapas/kumo-jev-crash-records](https://github.com/pozapas/kumo-jev-crash-records) — Code for the study "Estimating Uncoded Crash Factors with Tabular Foundation and System One Models: Kumo Tabular and Jev" (Rafe and Das): joins the coded fields and officer narratives of 5.6 million Texas crashes (2017–2025) — Kumo Tabular reads the coded record of every crash, Jev reads the narratives of two probability samples, human judgments recalibrate Jev, and a multiwave predict-then-debias estimator joins the tiers; a second human tier checks the estimates by design. No crash data in the repo itself (`DATA_ACCESS.md` explains how to obtain the Texas CRIS extract). Independent research — not authored by TypeSafe. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
 
+- [Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem](https://arxiv.org/abs/2609.30216) - A data-driven application ecosystem survey and analysis of 2,170 public Jev projects, recording early growth, application domains, and decision-use patterns. Non-peer-reviewed arXiv preprint; repository counts describe visible experimentation, not production adoption or model performance.
+
 ## Community
 
 - [HN: Jev launch discussion](https://news.ycombinator.com/item?id=49761730)
