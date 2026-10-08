@@ -109,6 +109,28 @@ This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark
 - [scottmtech/cpu-jev](https://github.com/scottmtech/cpu-jev) — Honest minimal experiment: CPU-only "Jev-like" on local Qwen3-0.6B (GGUF) via llama.cpp — `select` picks one declared option, `yes_no` answers yes/no. The author states plainly it is not TypeSafe Jev, not a clone, and returns no calibrated probabilities (pick + `<think>` text only); downloads no weights. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
 - [amp-rh/local-decision-model-mlx](https://github.com/amp-rh/local-decision-model-mlx) — Train your own Jev-style classifier fully locally on Apple Silicon: MLX LoRA on a 4B base, ~35k examples (MultiNLI/BoolQ/Banking77/AG News/SST-5 + synthetic policy/routing generators) in a unified JSON schema — `make data` → `make train` (rank 32, ~4.7k iters, overnight on a Mac Mini M4 48GB) → `make serve` (fused adapter, OpenAI-compatible endpoint on localhost) → `make eval`. Explicit follow-up to Together AI's "How to train your own Jev for $17": same data recipe, same system prompt, no cloud, no API bill. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
 
+- [jiwidi/jiwo](https://github.com/jiwidi/jiwo) — "Small decision models (jev style) for latency critical scenarios": models read a state + typed questions and return a probability for every option in one forward pass, no text generation; ~50ms median request on one H100 (author's measurement). (72★, Python, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [deep-diver/jev-270m](https://github.com/deep-diver/jev-270m) — A System One decision interface on Google Gemma 3 270M: typed, calibrated decisions in one forward pass. Inspired by TypeSafe AI's Jev; independent project. (2★, Jupyter Notebook, Apache-2.0, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [rlisml/jev-cascade](https://github.com/rlisml/jev-cascade) — Let a 0.8B Jev-like prefill-only decision model perform like a 4B one: re-run on uncertain cases only — author's claim of 96% of the accuracy at 40% of the extra cost, +8pp over random routing at that budget (self-reported, not independently verified). (1★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [DanielMcSheehy/jev-smol](https://github.com/DanielMcSheehy/jev-smol) — Embedded text + image decision model with a Jev/CLEF System One compatible API. (0★, Python, Apache-2.0, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [bahree/myJEV](https://github.com/bahree/myJEV) — Build decision models from scratch and fine-tune Qwen: experiments in selection, calibration and training a Jev-style typed-decision model. (1★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
+
+- [patrick-lai/jev-local](https://github.com/patrick-lai/jev-local) — A local decision server for Intern-Decision-4B on Apple silicon (MLX), answering typed decisions on-device. (0★, Python, Apache-2.0, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [crashtheuniverse/jevgbc](https://github.com/crashtheuniverse/jevgbc) — "A compiled decision model": a question and examples in, a tiny integer `.bin` out — distills a typed decision into a portable artifact. (0★, Python, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [Yusaku-Kato/JevPalace](https://github.com/Yusaku-Kato/JevPalace) — Jev-style local decision API: typed schema in, type-safe values + logprob confidence out. (0★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [JuliaServices/JevSDK.jl](https://github.com/JuliaServices/JevSDK.jl) — Julia SDK for Jev and the TypeSafe AI System One API. (0★, Julia, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [mbutler/jev](https://github.com/mbutler/jev) — A small client for Jev on OpenRouter: send a state and typed questions, get back probabilities — your code decides what to do with them. (0★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [Jev27B/JEV-27B-Desktop](https://github.com/Jev27B/JEV-27B-Desktop) — Local desktop app for the JEV-27B open decision model (Ollama GGUF). (1★, C++, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
 ## Projects & Code
 
 Browser agents, mobile agents, guardrails — the fastest-moving category. Starred entries have verified repos.
@@ -957,6 +979,88 @@ Browser agents, mobile agents, guardrails — the fastest-moving category. Starr
 
 - [DeRuiChen258/Unitree_Low-Level_Balance](https://github.com/DeRuiChen258/Unitree_Low-Level_Balance) — Unitree G1 cerebellum balance + multi-action adaptive system in MuJoCo: official teacher ONNX policy plus a self-trained PPO residual for balance (teacher Sim2Sim 1.98 m/s, no falls), skill-primitive composition, and LayA (TypeSafe Laya) structured decisions as the router — four question heads plus a rule fallback, with calibration and fine-tuning reports. On top sits an autonomous bend-and-pickup demo (lifts roughly half body weight, zero clipping), with a one-click visualization and an MP4 in the v1.0.0 release. Chinese README with an honest limitations section. (1★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
 
+- [tsale/jevline](https://github.com/tsale/jevline) — "Jevline: start from one confirmed-malicious process; Jev links the rest of the incident" — DFIR tool: Jev asks of every other process whether it belongs to the same incident, producing a timeline of only the linked activity. (36★, TypeScript, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [nikuscs/orbs](https://github.com/nikuscs/orbs) — Multi-bot chat you run yourself: with no mention, Jev scores which bot should reply (mention a bot to wake it directly); a daemon on your machine runs each turn through Pi. (35★, TypeScript, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [uu889/laya-opencv](https://github.com/uu889/laya-opencv) — Local workbench (Windows/Linux, 中文/EN UI) combining OpenCV with decision models (Laya/Jev): OpenCV measures from images, hard rules guard the numbers, the model concludes — used for fruit picking, weed/pest monitoring, steel & textile QC; v3.0 adds model training. Chinese README. (47★, Python, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [TianJinWeiBoss520/social-risk-qwen-jev](https://github.com/TianJinWeiBoss520/social-risk-qwen-jev) — Chinese social-platform multimodal content risk identification: data governance, traditional baselines, Qwen3-VL domain LoRA, structured evidence, and TypeSafe Jev decisions — with CI regression tests. Chinese README. (6★, Python, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [ckarnell/ocarina-songbook](https://github.com/ckarnell/ocarina-songbook) — Make songs for Link's ocarina and send them to the Jev stream — playful demo wiring music generation into a Jev stream. (7★, Python, no license declared, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
+
+- [Kiggsworthy/jev-soundboard](https://github.com/Kiggsworthy/jev-soundboard) — A live AI soundboard powered by Jev: listens to your call (FaceTime/Discord/Zoom) and fires sound effects in real time, even when everyone's talking over each other. (3★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [gnipbao/jev-highlight-cutter](https://github.com/gnipbao/jev-highlight-cutter) — Clip long-video highlights by personal preference and target length: Jev scores candidate segments, clip selection is traceable, local FFmpeg rough cut. Ships as an AI agent skill. (2★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [az1412/jev-job-helper](https://github.com/az1412/jev-job-helper) — Semantic screening and fit-ranking of BOSS 直聘 job posts with Jev: quick apply, judgment caching, pause/resume, process logging; ships a compiled Chrome package. Chinese README. (2★, TypeScript, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [czyczy23/astrbot_plugin_jev](https://github.com/czyczy23/astrbot_plugin_jev) — AstrBot group-chat plugin (Chat_PLUS fork): integrates Aliyun's System One Jev decision model for interjection/active-opening review, with per-group rate limits and degradation protection. Chinese README. (2★, Python, AGPL-3.0, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [rlfordon/could-jev](https://github.com/rlfordon/could-jev) — Claude skill: a quick gut-check on whether Jev (TypeSafe's typed-judgment model) could help a given task — a decision aid for routing work to Jev. (2★, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [NachikethRamesh/Tweet-Index](https://github.com/NachikethRamesh/Tweet-Index) — Search your liked and bookmarked tweets using Jev: one Jev question per candidate for relevance rerank, Jev tags substance on five named levels; no model is called at query time except Jev. (2★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, code-level Jev usage verified)
+
+- [ronibandini/JevWiFiAnalyzer-](https://github.com/ronibandini/JevWiFiAnalyzer-) — WiFi analyzer with Jev AI: network survey data judged by Jev. (1★, Python, GPL-3.0, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [OGZamasu/JevBot](https://github.com/OGZamasu/JevBot) — Open-source Jev-powered Discord spam moderation with an allowlisted dashboard. (0★, TypeScript, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [charlesDabard/jev](https://github.com/charlesDabard/jev) — "Jev · 11 niveaux de démos live en un seul fichier HTML" — eleven live Jev demos in a single HTML file. French. (0★, HTML, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [tzolov/voxxeddays2026-demo](https://github.com/tzolov/voxxeddays2026-demo/tree/main/05-1-modular-rag) — Christian Tzolov's (Spring AI lead) VoxxedDays 2026 demo; the modular-RAG module wires Jev post-processing in: JevDocumentFilter drops injected/irrelevant passages, JevDocumentReranker keeps the top 3 that answer the query. (48★, Java, Apache-2.0, created 2026-10-02; real non-fork verified via GitHub API, raw sub-README verified)
+
+- [bragamat/jevkit](https://github.com/bragamat/jevkit) — `jev`: a Jev (TypeSafe System One) toolkit CLI for coding agents — pipe context through Jev judgments, read less, decide fast. (1★, Go, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [sormazi/jev-dispatch](https://github.com/sormazi/jev-dispatch) — Jev-powered support ticket triage with typed decisions, confidence gates and policy routing. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
+
+- [kmosher/jevons-talking](https://github.com/kmosher/jevons-talking) — Jev answers questions one menu pick at a time through a word-prediction keyboard — accessibility-flavored demo. (1★, TypeScript, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [Hoppin-Sorter/jev-router](https://github.com/Hoppin-Sorter/jev-router) — Jev picks the right Claude or OpenAI model, effort level and skill for each prompt. (1★, TypeScript, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [amyivychoi/jev-browser-agent](https://github.com/amyivychoi/jev-browser-agent) — Local browser agent: Browser Use reads, Jev decides, Browser Harness validates — real-web tasks with validation. (1★, Python, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [saloni-garg/jev-max](https://github.com/saloni-garg/jev-max) — "The Jev browser agent that handles the real web": shadow DOM and iframe piercing, Jev-driven element decisions. (1★, Python, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [xiaoxiaomugong/jev-context](https://github.com/xiaoxiaomugong/jev-context) — Read-only code retrieval with optional Jev scoring and budgeted reading advice for coding agents. (1★, Python, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [samuelyossef/jev-openfast-browser](https://github.com/samuelyossef/jev-openfast-browser) — JEV OpenFast Browser: chat browser agent with live preview and manual control. (0★, Python, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [andrewedunn/jev-plays-sc](https://github.com/andrewedunn/jev-plays-sc) — Jev makes every city-building decision in StarCraft — a full action-space game demo. (0★, HTML, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [Jorge-Polanco-Roque/jev-plays-mario](https://github.com/Jorge-Polanco-Roque/jev-plays-mario) — A 0.4B typed-decision model plays Super Mario Bros. by reading NES RAM, with savestates. (0★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [qianyuxiang-369/pi-jev-governor](https://github.com/qianyuxiang-369/pi-jev-governor) — A governor for the pi coding agent: plan-strategy routing, model-tier routing and permission escalation, all decided by Jev. (0★, TypeScript, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [jeffrydegrande/jevry](https://github.com/jeffrydegrande/jevry) — Command-line tool for the TypeSafe Jev model: ask typed questions from the terminal. (0★, Go, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [SuperfastSimon/jevgb](https://github.com/SuperfastSimon/jevgb) — Unofficial community tool: cheap task routing for Grok Bot via Jev decisions. (0★, Python, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [CodeCave0000/jev-triage](https://github.com/CodeCave0000/jev-triage) — Jev (TypeSafe AI's decision model) triages every message before your OpenClaw agent sees it. (0★, JavaScript, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [EdisonTKPcom/jev-orchestrator](https://github.com/EdisonTKPcom/jev-orchestrator) — Local board so Cursor, Claude Code, Codex and Devin can claim one task and hand it off. (0★, TypeScript, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [viva-lee/jev-xray](https://github.com/viva-lee/jev-xray) — Ask every file in your repo a question at once — Jev answers light up in a live view. (0★, JavaScript, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [Dinesh-Sunny/jev-tokensaver](https://github.com/Dinesh-Sunny/jev-tokensaver) — Cut Claude Code & Cowork token use with TypeSafe Jev: prune long output, find the decision points, route the rest to cheap judgments. (0★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [hmcdaniel03/jev-autopilot](https://github.com/hmcdaniel03/jev-autopilot) — Keep Claude Code sessions moving while you're away: TypeSafe Jev screens risky actions, approves the safe ones. (0★, TypeScript, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [abehrman/hermes-jev-mana](https://github.com/abehrman/hermes-jev-mana) — Hermes Agent plugin and core patch that lets Jev make decisions at fixed decision points in the agent loop. (0★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [monkey1sai/codex-jev-integration](https://github.com/monkey1sai/codex-jev-integration) — Bounded advisory Jev MCP integration for Codex CLI and App — Jev advises, Codex acts. (0★, Python, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [yinyu0/jev-advisor-community](https://github.com/yinyu0/jev-advisor-community) — Unofficial Windows chat-reply assistant mod: Jev-powered reply suggestions with a global capture hotkey and single-model config. Chinese README. (0★, Python, GPL-3.0, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [vicfei/jev-pipeline-skill](https://github.com/vicfei/jev-pipeline-skill) — v0.1 prototype: one workflow for Jev question design — find → fit → draft → lint. (0★, Python, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [akhil-neelam-ai/jev-fit-scorer](https://github.com/akhil-neelam-ai/jev-fit-scorer) — Score any job posting against your resume with TypeSafe's Jev model — Chrome extension. (0★, JavaScript, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified)
+
+- [wangzi5151/jev-chat-wech](https://github.com/wangzi5151/jev-chat-wech) — Jev WeChat chat assistant (Android): reads WeChat nodes via the accessibility service, Jev judges, floating-window candidate replies with one-tap fill — sending always stays manual. Chinese README. (0★, Kotlin, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
+
+- [pentasir/jev-inbox-triage](https://github.com/pentasir/jev-inbox-triage) — A decision model (TypeSafe Jev) sorts a store's inbox: 19/20 emails to the right bucket (author's measurement). (0★, HTML, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [gbesse](https://github.com/gbesse?tab=repositories&q=jev) — A family of small MIT-licensed Jev signal integrations by one author, each turning tool-specific events into typed Jev decisions: [unleash-jev-rollout](https://github.com/gbesse/unleash-jev-rollout) (feature-flag feedback → regression/no_regression/review, Prometheus counters), [alertmanager-jev-triage](https://github.com/gbesse/alertmanager-jev-triage), [zulip-jev-router](https://github.com/gbesse/zulip-jev-router), [coolify-jev-failures](https://github.com/gbesse/coolify-jev-failures), [questdb-jev-signals](https://github.com/gbesse/questdb-jev-signals), [jev-crowdpilot](https://github.com/gbesse/jev-crowdpilot), [jev-rankroom](https://github.com/gbesse/jev-rankroom), [raycast-jev-clipboard](https://github.com/gbesse/raycast-jev-clipboard), [qgis-jev-review](https://github.com/gbesse/qgis-jev-review), [davinci-jev-review](https://github.com/gbesse/davinci-jev-review), [jetbrains-jev-review](https://github.com/gbesse/jetbrains-jev-review). Template-structured (each ships `jev.py` + tests); grouped as one entry to avoid bloat. (0★, Python, MIT, created 2026-10-04–07; real non-fork verified via GitHub API, raw README spot-verified)
+
 ## Benchmarks & Evaluations
 
 Numbers with sources. Vendor claims are labeled as such.
@@ -1159,6 +1263,12 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [ethank64/moral-bench](https://github.com/ethank64/moral-bench) — "Which moral frameworks does a decision model align with?" ETHICS dataset: 300 random test-split items per framework set (virtue, justice, utilitarianism, deontology, commonsense), full prediction tables published. v1 validates the pipeline on Kev-0.8B (an open Jev-style model, not TypeSafe Jev itself): virtue AUROC 0.807, justice 0.685, utilitarianism 0.603, deontology 0.583, commonsense 0.571 — the author says to read it as proof the pipeline works, not as a finding about moral frameworks. (0★, Python, MIT, created 2026-10-04; real non-fork verified via GitHub API, raw README verified; tested model is Kev-0.8B, caveat noted)
 
+- [thddydgnl/jev-world-model](https://github.com/thddydgnl/jev-world-model) — Can a frozen decision model (JEV) serve as an LLM agent's world model? Compares a frozen typed-decision model against a general LLM on prediction tasks. Korean/English READMEs. (0★, Python, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified; numbers are the author's own measurements)
+
+- [anweat/jev-websearch-eval](https://github.com/anweat/jev-websearch-eval) — Independent offline experiments (Oct 2026) on whether the hosted Bocha Jev decision model (`bocha-jev-v1`) is worth using in a web-search evidence pipeline (candidate filter, evidence-block scorer, coverage judge), compared with a plain lexical baseline. (0★, JavaScript, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified; numbers are the author's own measurements)
+
+- [mugunthank7/jev-pulse](https://github.com/mugunthank7/jev-pulse) — Live race on real human-labeled Amazon Shopping Queries/ESCI data: Jev vs Gemini 3.8 Flash vs Claude Sonnet 5.5 sort the same query+product envelopes side by side. (0★, TypeScript, MIT, created 2026-10-07; real non-fork verified via GitHub API, raw README verified; numbers are the author's own measurements)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
@@ -1229,6 +1339,12 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 - [logicinfocursos/jev_youtube_tutorial](https://github.com/logicinfocursos/jev_youtube_tutorial) — Portuguese YouTube-tutorial demo app: pits Jev (TypeSafe's System One model) against an LLM agent on 12 fictitious support tickets (route to Commercial / Tech support / Finance / Legal & security, plus urgency and lead-close/subscriber-churn chance), each side timed with tokens and cost shown side by side, progress bar making the speed gap visual. Node 18+ server with no install dependencies; needs `TYPESAFE_API_KEY` plus one LLM key (DeepSeek/Anthropic/OpenAI). All data explicitly fictional; ships with a screenshot and a `prompt.md`. (0★, JavaScript, MIT, created 2026-10-03; real non-fork verified via GitHub API, raw readme.md + repo tree verified)
 
 - [nshazly/jev-ai-system-one-tutorial](https://github.com/nshazly/jev-ai-system-one-tutorial) — Hands-on tutorial for Jev-style typed decision models that runs entirely on your machine: Bespoke Labs' open Nimble model served locally through Ollama — an honest local stand-in, not the real Jev, no TypeSafe API involved. (0★, Python, Apache-2.0, created 2026-10-04; real non-fork verified via GitHub API, raw README verified)
+
+- [zhaoyanan-pixe/jev-cookbook](https://github.com/zhaoyanan-pixe/jev-cookbook) — Chinese cookbook: "把 Jev（一个小而快的判定器）接进你的 AI 助手" — a month of practice notes: integration, decision points, shadow-mode evaluation, pitfalls. (0★, Python, MIT, created 2026-10-06; real non-fork verified via GitHub API, raw README verified)
+
+- [rayopavri/jev-setup](https://github.com/rayopavri/jev-setup) — "A Mac's whole Jev setup for Claude Code": model routing, lanes and community patterns for wiring Jev into Claude Code on macOS. (0★, Python, MIT, created 2026-10-08; real non-fork verified via GitHub API, raw README verified)
+
+- [bracoelho/jev-explainer](https://github.com/bracoelho/jev-explainer) — "Jev Confidence Explained": an independent, unofficial explainer of TypeSafe Jev's confidence scores — what the numbers mean and don't mean. (0★, HTML, MIT, created 2026-10-05; real non-fork verified via GitHub API, raw README verified)
 
 ## News & Articles
 
@@ -1355,6 +1471,8 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 
 - [WSJ: "Startup TypeSafe AI's Jev Model Sparks Copycats, Talk of LLM Alternatives" (2026-10-02)](https://www.wsj.com/tech/ai/startup-typesafe-ais-jev-model-sparks-copycats-talk-of-llm-alternatives-e39ff57d) — CEO Diogo Almeida interview (ex-OpenAI, ChatGPT): Jev in use by roughly **25% of Fortune 500 companies** (Almeida's figure, undefined "in use"), daily traffic hit a trillion tokens about a week prior ("non-fleeting" — servers, not people, making the calls); $40M seed from DCVC. Framed around copycats: Cloudflare's open-weight Clef/Clef-flash as Jev-API-compatible challengers. Paywalled; verified via snippet + accessible summary below.
 - [AI Weekly: "TypeSafe says Jev reaches 25% of Fortune 500, trillion tokens daily" (2026-10-02)](https://aiweekly.co/alerts/typesafe-says-jev-reaches-25-of-fortune-500-trillion-tokens-daily) — Accessible summary of the WSJ piece with honest sourcing notes: both traction figures come from Almeida alone, and Cloudflare's "beats Jev on 3 of 4 evals" rests on TypeSafe's own eval suite rather than an independent benchmark. Full text verified.
+
+- [HackerNoon: "JEV-27B-VL: Can AI Make Better Decisions From Images?" (2026-10-07)](https://hackernoon.com/jev-27b-vl-can-ai-make-better-decisions-from-images) — Deep write-up on autotrust's Apache-2.0 27B vision-language decision model: System 1 typed decisions (yes/no, 2–256 options, 0–5 ratings, 256K-token prompts) plus System 2 as the unmodified Qwen3.8-27B; reported AgentRewardBench AUROC 0.91, VL-RewardBench 78.3%, six text-decision benchmarks mean 84.07% vs Jev 1.13's 83.85% — all vendor-reported figures, not independently verified. Full text verified.
 
 ## Papers
 
