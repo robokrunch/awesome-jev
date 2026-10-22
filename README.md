@@ -1899,6 +1899,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [ysys143/context-harness](https://github.com/ysys143/context-harness) — Claude Code mod for long sessions from the author of ysys143/jev-harness: folds completed tool results into one-line pointers at compaction (originals kept on disk, read back via `read_coordinate`), and adds Jev-judged gates where rules can't decide (announced-but-undone work, secret-file access, conditional instructions). Every Jev setting is off by default — installing the mod with a key sends nothing. Merges the author's earlier context-fold + jev-harness plugins (uninstall both first; fold records from the old plugins stay readable). (1★, TypeScript, MIT, created 2026-10-22; real non-fork verified via GitHub API, raw README + tree verified)
 
+- [ThrownLemon/smart-dark](https://github.com/ThrownLemon/smart-dark) — Chrome (Manifest V3) dark-mode extension with an opt-in Jev screenshot check: add your own TypeSafe API key and it sends a JPEG of the visible page to `https://api.typesafe.ai/v1/systemone` (`jev-latest`, `TypeSafe-Danger-Zone-Images: true`), then keeps the dark treatment or restores the site's original look from a fixed set of answers at ≥0.8 confidence — it never runs model-generated CSS or code. Honest README: live Jev visual accuracy and latency explicitly unverified; screenshots may contain private content (not redacted); 30 checks/day cap, decisions cached one hour. (0★, TypeScript, MIT, created 2026-10-22; real non-fork verified via GitHub API, raw README + tree verified; a byte-identical copy travisw84/smart-dark appeared ~20 min later, the earlier repo is listed)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
