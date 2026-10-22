@@ -191,6 +191,8 @@ This list is maintained by [RoboKrunch](https://robokrunch.com) — we benchmark
 
 - [decido-ai/decido](https://github.com/decido-ai/decido) — Jev-wire-compatible calibrated decision model for a laptop CPU: LoRA fine-tune of "Gemma 4 26B-A4B" (~4B active params) shipped as 8-bit GGUF for llama.cpp, accepting /v1/systemone-style state + typed questions. Author-claimed figures (unverified): six-benchmark mean 85.38 vs Jev 1.13's published 83.85 (JevBench, Kev, OpenJev, Nimble, VitaminC, MASSIVE); trained on public data plus an open teacher model with "no Jev outputs and no Claude outputs"; 4.1 s on an Apple M4 Pro CPU vs ~0.3 s hosted API; same input is always deterministic per machine. Weights at [decido-ai/decido-26b-a4b](https://huggingface.co/decido-ai/decido-26b-a4b). (0★, Python, Apache-2.0, created 2026-10-22; real non-fork verified via GitHub API, raw README + tree verified, HF model page returned 200; all figures are the author's own claims)
 
+- [AgentwareStudio/d3-gguf](https://github.com/AgentwareStudio/d3-gguf) — Community GGUF conversion of the D3 family of decision models (upstream `vllm-sr/d3-mini`, `d3-flash`, `d3`; Qwen3-based): four quantized variants (mini_mixed / flash_all_INT8 / flash_mixed / full, 5.9–20.2 GB) using the upstream systemone protocol and decision readout, with pinned revisions, SHA-256 manifest, and VERIFICATION.md/EVALUATION.md. Explicitly a community conversion, not an official upstream release; weights on Hugging Face (`Agentware/d3-*-calibrated-gguf`). (0★, Apache-2.0, created 2026-10-22; real non-fork verified via GitHub API, raw README + tree verified)
+
 ## Projects & Code
 
 Browser agents, mobile agents, guardrails — the fastest-moving category. Starred entries have verified repos.
@@ -1853,6 +1855,8 @@ Numbers with sources. Vendor claims are labeled as such.
 - [Zilize/parallax-dsh](https://github.com/Zilize/parallax-dsh) — DeepSeek Harness (dsh) plugin for comprehensive arXiv literature search: harvests a local corpus, then screens and classifies papers with the Jev judge (`api.typesafe.ai`, `jev-1.13.0`, `PARALLAX_JEV_API_KEY`) — one Noul per paper for screening, Choice with confidence thresholds for classification, strict response validation. (0★, TypeScript, Apache-2.0, created 2026-10-22; real non-fork verified via GitHub API, raw README + src/sets/jev.ts verified)
 
 - [DYR1/systemone-medbench](https://github.com/DYR1/systemone-medbench) — Evaluation toolkit for medical decision reliability: runs Jev and Jev-like models through four-dimensional benchmarking (medqa_decision, medcalc, ctg_uci21, care_bench and more), with dataset configs, expected source hashes, `scripts/evaluate_jev.py`, and end-to-end tests. Note: ships an MIT LICENSE file (GitHub API reports NOASSERTION — verified manually). (0★, Python, MIT, created 2026-10-22; real non-fork verified via GitHub API, raw README + LICENSE + tree verified)
+
+- [reeschan/harness2-jev-connector](https://github.com/reeschan/harness2-jev-connector) — Task connector for the harness2 agent harness's `harness2-intake`: claims PBIs queued in jev-mcp (TypeSafe Jev MCP, `TYPESAFE_API_KEY`), runs each PBI in its own git worktree, and applies the chosen run's diff back to the source repo after an untouched-files guard, submitting verification results via `submit_result`. EN + JA READMEs, architecture diagram, policy/report modules, tests. (0★, Python, Apache-2.0, created 2026-10-22; real non-fork verified via GitHub API, raw README + connector.py verified)
 
 ## Demos on X
 
