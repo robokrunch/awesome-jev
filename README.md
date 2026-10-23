@@ -2224,6 +2224,8 @@ Hands-on, not hot takes. Entries here were checked for real code or real runs.
 
 - [Jevstiller benchmarks: Jev 1.14.0 vs 1.13 compatibility notes (2026-10-17)](https://jevstiller.pages.dev/project/benchmarks/) — Independent developer measurements comparing `jev-1.14.0` against recorded `jev-1.13.0` answers on Banking77's 2,000 held-out messages: same label on 95.0% of messages, similar accuracy (78.8% vs 78.5%) and unsure-share (12.2% vs 11.8% below 0.6). Disagreement concentrates where either model was unsure: below 0.6 they agree on 69% (16% of messages); where both were ≥0.9 sure, 100% agreement (45% of messages). For the distillation use case: a 1.13 student can't serve 1.14 within the 2% disagreement budget, so the default `teacher_change = "fallback"` routes to Jev until a 1.14 student passes shadow (~3,500 requests). A 1.14 live-student run reached 54.9% coverage at 99.75% agreement (vs 61.7%/99.40% on recorded 1.13 answers), Jev latency mean 262ms. (author's own measurements, full page verified)
 
+- [Magnus Ekdahl: "Building a cheaper review loop for coding agents using Jev" (2026-10-21)](https://oxtan-maker.github.io/parallix/articles/jev-review-evidence/) — Engineering notes from his Parallix agent workflow: Jev cleared 41 of 114 re-reviews (36%); projected 29% less review work and 35% less API spend at 800 re-reviews/month (~2.2 h and ~$74 saved). Author-measured on his own workflow. ([HN](https://news.ycombinator.com/item?id=50205651), 1 point, no comments at scan time)
+
 ## Papers
 
 TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-27. This section will not be padded with loosely-related arXiv links — but the first full third-party papers treating Jev as the measurement subject are below:
