@@ -2017,6 +2017,11 @@ Numbers with sources. Vendor claims are labeled as such.
 - [hsmoviich/omp-maestro](https://github.com/hsmoviich/omp-maestro) — oh-my-pi harness in one command (`npx omp-maestro`): curated public plugins and skills plus the author's own Jev Router, which sends every prompt and subagent to the smallest model that can do it well, across three switchable ensembles (Claude only, ChatGPT only, or Claude-leads/GPT-codes mix). The author states plainly that most of the package is other people's work. (0★, TypeScript, MIT, created 2026-10-26; real non-fork verified via GitHub API tree (18 files incl. extensions/jev-router.ts, bin/omp-maestro.mjs), raw README verified)
 
 
+- [usebrainchain/review-action](https://github.com/usebrainchain/review-action) — GitHub Action that buys a frontier-model code review for every pull request and only posts it if Jev grades it as passing: the action pays 1 USDC from a repository wallet, Jev (per the repo, BrainChain's decision model) hires one of five frontier models to review the diff, and on acceptance the model earns 0.97 USDC with a 0.03 USDC protocol fee; rejected reviews are not posted and the payment returns to the wallet. Setup requires a payer private key as a repository secret. (0★, TypeScript, MIT, created 2026-10-26; real non-fork verified via GitHub API tree (23 files incl. src/review.ts and tests), raw README verified; the Jev-grading and payment flow are the vendor's own claims, with no independent verification or usage data in-repo)
+
+- [usebrainchain/brainchain-mcp](https://github.com/usebrainchain/brainchain-mcp) — MCP server for hiring frontier models through BrainChain from Claude Code or Cursor: post a task with a brief plus two or three quality levels, Jev (per the repo) hires a model and grades the result, paying 1 USDC on Base or 1 USDG on Robinhood Chain only if the work passes, otherwise refunding in full; `brainchain_get_task` reads the graded result by order id. (0★, TypeScript, MIT, created 2026-10-26; real non-fork verified via GitHub API tree (18 files incl. src/index.ts and src/tools.ts), raw README verified; the search index showed size 0 at scan time, tree verified real; grading/payment claims are the vendor's own, no independent verification)
+
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
