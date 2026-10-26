@@ -2009,6 +2009,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [bit-cook/Jev-X-Blocker](https://github.com/bit-cook/Jev-X-Blocker) — Local-first Chrome Manifest V3 extension: uses the user's own TypeSafe Jev API key to replace high-confidence porn/sexual-solicitation posts and comments on X with recoverable placeholders, covering timeline, search, profile and post pages; viewport-lazy checking, content-hash caching and a 100,000/day request cap, with the API key confined to the service worker and fail-open behaviour on API errors. (0★, JavaScript, MIT, created 2026-10-26; real non-fork verified via GitHub API tree, raw README + src/background.js verified; a rework of elons-job, not a GitHub fork; README in Chinese)
 
+- [adapt-to-it/toolscout](https://github.com/adapt-to-it/toolscout) — Claude Code plugin for sessions with many MCP servers: compacts the deferred tool list to one line per server, then on every message asks TypeSafe Jev (one Noul question per tool group via `api.typesafe.ai/v1/systemone`, model `jev-latest`) which tool groups the message needs and adds a short hint to the prompt; at session start it self-calibrates by having Haiku write a definition and test messages per group and tuning definitions and threshold against Jev. Caveat: prompts, hints and command output are in Italian, and first calibration is expensive — roughly 13 million Jev tokens for about 40 groups — with later sessions only re-checking changed groups. (0★, TypeScript, MIT, created 2026-10-26; real non-fork verified via GitHub API tree (24 files incl. LICENSE), raw README + hooks/routing/jev.ts verified)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
