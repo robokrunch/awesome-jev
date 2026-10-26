@@ -1998,6 +1998,10 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [Mattia Mangia: "One question at a time: benchmarking a System One model against Gemini for marketplace compliance" (2026-10-19)](https://medium.com/@mattia.mangia_79862/one-question-at-a-time-benchmarking-a-system-one-model-against-gemini-for-marketplace-compliance-05bab8c9b1f6) — Weekend experiment: 8,028 marketplace listings from three sellers classified for restricted-product risk / out-of-scope / out-of-catalog, with Jev (jev-1.14.0) rebuilt as 22 small questions — 72 seconds total, ~5× faster (≈4× at production concurrency) and ~1/5 the cost of the production Gemini setup, with the same flag decision as Gemini 2.5 Flash on 98.8% of listings. On a labelled 857-listing sample Jev's flags were more precise (84% right vs Gemini 61%); both caught about 4/5 truly restricted products; Jev's confidence separated doubtful from solid flags, Gemini's did not. (intro figures verified 2026-10-26; full methodology section not fetched due to Medium rendering; numbers are the author's own experiment)
 
+- [boxxxie/jev_dsl](https://github.com/boxxxie/jev_dsl) — Elixir compile-time contract DSL for TypeSafe Jev (`SystemOneSDK`): compiles `noul`/`choice`/`score` and multi-question `defjev` bundles into validated prepared structs at compile time, with two-tier content-addressed SHA-256 caching of wire payloads. (0★, Elixir, MIT, created 2026-10-26; real non-fork verified via GitHub API tree, raw README + LICENSE verified)
+
+- [abhimanyuHatesToCode/jev-fn](https://github.com/abhimanyuHatesToCode/jev-fn) — Small Python wrapper exposing TypeSafe's Jev as a single callable (`jev("Is this customer angry?") > 0.9`); `typesafe-sdk` is the only runtime dependency, key via one env var (TypeSafe/OpenRouter/Vercel). (0★, Python, MIT, created 2026-10-26; real non-fork verified via GitHub API tree, raw README + LICENSE verified; note: LICENSE file carries unresolved merge-conflict markers)
+
 
 ## Demos on X
 
