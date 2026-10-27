@@ -2062,6 +2062,16 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [Guilherme-pxt/hybrid-search-rag](https://github.com/Guilherme-pxt/hybrid-search-rag) — Hybrid search RAG over internal docs with a measured ablation, plus a Jev-as-reranker experiment: on 135 gold questions, Jev (`jev-1.14.0`, one request scoring 20 candidates as `noul` questions) matched the local LLM reranker (Recall@1 0.918 vs 0.900, inside noise) at 0.25 s vs 6.66 s per question and US$0.17 per 1,000 questions — while fusing Jev's ranking with the hybrid ranking by RRF hurt (Recall@1 0.654), reported honestly. (0★, Python, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README + tree + `hybridrag/jev.py` verified)
 
+- [TechPreacher/jev_router](https://github.com/TechPreacher/jev_router) — Claude Code model router: TypeSafe Jev answers one Choice question sizing each message (tiny / everyday / large / hardest), then routes it to a Haiku 5.5 / Sonnet 5.5 / Opus 5.5 / Fable 5.1 helper agent; the installer never copies or stores the API key. (0★, Python, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README + files/README.md verified)
+
+- [ValiusSciences/abstract-sift](https://github.com/ValiusSciences/abstract-sift) — Local CLI for screening research abstracts against a research-interest text with OpenAI Decisions, TypeSafe JEV, or both: concurrent resumable scoring, per-request cost accounting, CSV/JSONL exports and comparison metrics; both live integrations passed a two-abstract smoke test and a full ESMO run completed in 13.31 s of scoring time on the author's account (beta, author's own run). (0★, Python, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README + engine.py verified)
+
+- [BeakrHub/TraceVarianceAnalyzer](https://github.com/BeakrHub/TraceVarianceAnalyzer) — Find likely failures in AI agent runs from a single run, with no answer key: one JEV read returns P(correct) at about $0.00015 per run (author claim); the study pinned jev-1.14.0 and each score row records the version jev-latest resolved to. (0★, Python, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README + onerun/jev.py verified)
+
+- [esthyj/ko-cascade-eval](https://github.com/esthyj/ko-cascade-eval) — Korean classification eval (NSMC / KLUE-YNAT / APEACH, 1,000 test items each) validating Jev-1.14.0 confidence for LLM cascades, with code, cached responses and full results: Jev-1.14.0 accuracy 0.847 / 0.751 / 0.801 at $0.015–0.017 per 1,000 calls and ~0.17 s median latency; the client pins the version ID and rejects aliases; linked to a 2026 Korean AI society conference paper, Korean-language repo. (0★, Python, MIT LICENSE file verified despite API NOASSERTION, created 2026-10-27; real non-fork verified via GitHub API, raw README + src/clients/jev.py verified)
+
+- [gergeisabo/laya-oneshot](https://github.com/gergeisabo/laya-oneshot) — Cold-start typed decisions from an open Laya checkpoint: load, answer, exit — no daemon, no port, no resident RAM, no API key; presets for email, guard, router and triage. (0★, Python, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README verified; Laya is open-weight, not TypeSafe's hosted Jev)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
