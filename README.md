@@ -2417,6 +2417,8 @@ TypeSafe has not published a formal paper on Jev or RLCD as of 2026-09-27. This 
 - [Kisekis/jev-ipi](https://github.com/Kisekis/jev-ipi) — Project website for "Can Fast Decisions Afford to Skip Reasoning? Auditing Jev-like System-1 Decision Models under Indirect Prompt Injection": four direct decision models audited on 1,440 paired synthetic browser tasks; clean accuracy averages 91.0% (Jev 1.13 at 94.79% in the site's data file), yet two-shot indirect-prompt-injection attack success reaches 81.2% and calibration error rises from 2.6% to over 36% under injected claims. Site ships the paper PDF plus the underlying per-model data (data/paper-data.js). Independent research — not authored by TypeSafe. (0★, created 2026-10-27; real non-fork verified via GitHub API tree (15 files incl. index.html, paper.pdf, data/paper-data.js), raw README + index.html + paper-data.js verified; lag catch — surfaced as a size-0 watch in the 2026-10-27 19:21 round and filled in since; figures are the paper's own, on synthetic tasks, not independently reproduced)
 
 
+- [Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem](https://arxiv.org/abs/2609.30216) - A data-driven application ecosystem survey and analysis of 2,170 public Jev projects, recording early growth, application domains, and decision-use patterns. Non-peer-reviewed arXiv preprint; repository counts describe visible experimentation, not production adoption or model performance.
+
 ## Community
 
 - [HN: Jev launch discussion](https://news.ycombinator.com/item?id=49761730)
