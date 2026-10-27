@@ -2072,6 +2072,12 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [gergeisabo/laya-oneshot](https://github.com/gergeisabo/laya-oneshot) — Cold-start typed decisions from an open Laya checkpoint: load, answer, exit — no daemon, no port, no resident RAM, no API key; presets for email, guard, router and triage. (0★, Python, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README verified; Laya is open-weight, not TypeSafe's hosted Jev)
 
+- [rickndanger-ctrl/dev-studio](https://github.com/rickndanger-ctrl/dev-studio) — Mac multi-agent studio on Herdr: Opus architects, Haiku relays, Sonnet executes, and a TypeSafe Jev router reads every peer message, decides who needs it and delivers it, with a board showing each routing decision and its confidence; checks free memory first and starts fewer workers on tight machines. (0★, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README + router/router.py verified: JEV_URL api.typesafe.ai/v1/systemone, JEV_MODEL jev-latest)
+
+- [Guilherme-pxt/text-to-sql-guardrails](https://github.com/Guilherme-pxt/text-to-sql-guardrails) — Text-to-SQL guardrail ablation on a synthetic company database: a local LLM writes the SQL, deterministic guards decide what may execute, and TypeSafe Jev decides whether the question is in scope, too ambiguous to answer without asking, and whether the SQL that ran actually answers it; on 124 gold questions the LLM alone executed 11 unsafe queries, including reading restricted personal data for 9 of 10 exfiltration requests. (0★, Python, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README + sqlguard/jev.py verified)
+
+- [MehradYaghoubi/jev-research-engineering](https://github.com/MehradYaghoubi/jev-research-engineering) — Portable Agent Skills package for Codex, Claude Code, Pi and OpenCode with provider-configurable evidence triage; Jev is one optional provider, not the only route — the TypeSafe config is verified (api.typesafe.ai/v1/systemone, jev-1.14.0, $0.10/day budget cap) — and the author is candid that token reduction was measured only on a small synthetic workload and total cost savings are not proven. (0★, MIT, created 2026-10-27; real non-fork verified via GitHub API, raw README + references/config.json verified)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
