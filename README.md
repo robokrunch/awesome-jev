@@ -2090,6 +2090,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [vercel-labs/jev-ai-sdk-form-router](https://github.com/vercel-labs/jev-ai-sdk-form-router) — Official Vercel example: three forms route submissions by context with Jev (via Vercel AI Gateway, typesafe-ai/jev), with openai/gpt-6-luna-fast handling uncertain or failed evaluations; editable samples, routing details and optional email delivery. (13★, TypeScript, MIT, created 2026-09-21; real non-fork verified via GitHub API, raw README verified; surfaced this round because the same-day account examplessdk-lgtm/jevvd is a verbatim copy of this repo — the mirror is not listed)
 
+- [n9omi/jev-calibration-audit](https://github.com/n9omi/jev-calibration-audit) — Independent calibration audit harness for TypeSafe's Jev: tests whether Jev's stated probabilities can be trusted, on U.S. petroleum inventory reports where ground truth is computed exactly from EIA weekly series (never from a model). The Jev arm runs via langchain-typesafe's TypeSafeClassifier (jev-latest), compared word-for-word against an LLM-as-classifier arm (LangChain) plus rules and climatology baselines; the pipeline reports reliability diagrams, ECE, Murphy decomposition, Spiegelhalter test, paired Brier/RPS differences and Diebold–Mariano tests. Question bank covers Noul/Choice/Score across horizon-0 extraction and horizon-1 forecasts. (0★, Python, MIT, created 2026-10-28; real non-fork verified via GitHub API, raw README + src/jev_audit/arms/jev.py verified; harness only — results/ and data/raw are still empty, no audit numbers published yet; not the same project as jujumilk3/jev-calibration-audit already listed above)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
