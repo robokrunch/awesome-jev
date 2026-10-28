@@ -2110,6 +2110,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [ipiggyzhu/jev-chat-ios](https://github.com/ipiggyzhu/jev-chat-ios) — iOS port of the jev-chat-jarvis Android assistant's judgement engine (Swift/SwiftUI): the same 7 Jev judgement questions plus a best_reply ranking question, with judge presets for OpenRouter (typesafe/jev-1.13), TypeSafe direct (api.typesafe.ai, jev-latest), Vercel and OpenCode Zen; replies are drafted via an OpenAI-compatible endpoint, never auto-sent, and a Jev keyboard inserts candidates into chat apps. README in Chinese; ships an unsigned IPA via GitHub Actions (AltStore/SideStore re-signing, 7-day free-account window). (0★, Swift, MIT, created 2026-10-28; real non-fork verified via GitHub API, raw README + Sources/Jev/Models.swift + Sources/Jev/JudgeClient.swift verified; port of jev-chat/jev-chat-jarvis, not a TypeSafe product; lag catch — surfaced as a size-0 watch in the 2026-10-28 19:21 round and filled in since)
 
+- [stevenke1981/jev-gpt](https://github.com/stevenke1981/jev-gpt) — Single-model GPT-6.1 Terra proxy for Codex: Jev decides the reasoning effort (low–xhigh) for every generation and resumes long tasks that stop early, instead of switching models per generation. Derived from the author's jev-sol-terra (615dac7); new turns default to medium effort. README in Chinese. (0★, JavaScript, MIT, created 2026-10-28; real non-fork verified via GitHub API, raw README + repo tree (src/decisions.js, src/judge.js) verified; lag catch — surfaced as a size-0 watch in the 2026-10-28 21:21 round and filled in since)
+
 
 ## Demos on X
 
