@@ -2098,6 +2098,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [omjaiswal54321/sentiment-analysis-nlp](https://github.com/omjaiswal54321/sentiment-analysis-nlp) — Comparative sentiment-classification notebooks (TF-IDF logistic regression, PyTorch neural network, fine-tuned DistilBERT, Jev): the Jev notebook evaluates typesafe/jev-1.13.0 via an OpenAI-compatible API on a 2,881-sample test set, obtaining predictions for 2,877 samples at 84.01% accuracy, 0.77 macro F1 and 0.83 weighted F1. (0★, Jupyter Notebook, Apache-2.0, created 2026-10-28; real non-fork verified via GitHub API, raw README + 04_Jev_Evaluation.ipynb verified; Jev arm reached via a third-party OpenAI-compatible gateway, not TypeSafe direct)
 
+- [Acacia-Ma/2048-ai-strategy-visualizer](https://github.com/Acacia-Ma/2048-ai-strategy-visualizer) — Static 2048 page for testing and observing a JEV decision model: pure-Jev, Jev+local-check and Jev+local-rollout modes drive each move, with the board, the request sent to Jev, the raw response and the executed direction all visible alongside a local expectimax search for comparison; text or pure-vision input, plus OpenAI-compatible chat models for comparison. No model, weights or server are bundled — you point it at your own decision service (JEV mode talks to /v1/decide on a user-configured endpoint). README in Chinese with an English version. (0★, JavaScript, MIT, created 2026-10-28; real non-fork verified via GitHub API, raw README + README_EN.md + js/jev_client.js verified; distinct from yaredtekile/jev-2048 and dalva8711/Jev-Plays-2048 already listed above)
+
 
 ## Demos on X
 
