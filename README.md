@@ -2112,6 +2112,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [stevenke1981/jev-gpt](https://github.com/stevenke1981/jev-gpt) — Single-model GPT-6.1 Terra proxy for Codex: Jev decides the reasoning effort (low–xhigh) for every generation and resumes long tasks that stop early, instead of switching models per generation. Derived from the author's jev-sol-terra (615dac7); new turns default to medium effort. README in Chinese. (0★, JavaScript, MIT, created 2026-10-28; real non-fork verified via GitHub API, raw README + repo tree (src/decisions.js, src/judge.js) verified; lag catch — surfaced as a size-0 watch in the 2026-10-28 21:21 round and filled in since)
 
+- [brent-phillips/jev-for-marketers](https://github.com/brent-phillips/jev-for-marketers) — Free guide + Claude skill for using TypeSafe's Jev on marketing ops decisions (lead routing, reply triage, on-message checks, asset tagging): four ready-to-edit recipes with auto/review/human threshold bands, sample lead CSVs with an answer key, and a stdlib-only jev_batch.py that posts each recipe's questions in one call to api.typesafe.ai/v1/systemone with jev-latest. (0★, Python, MIT, created 2026-10-28; real non-fork verified via GitHub API, raw README + jev-marketing-decisions/scripts/jev_batch.py verified)
+
 
 ## Demos on X
 
