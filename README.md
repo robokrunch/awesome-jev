@@ -2216,6 +2216,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [bojansandhaus/dsh-jev-mcp](https://github.com/bojansandhaus/dsh-jev-mcp) — TypeSafe Jev decision tools for DeepSeek Harness (DSH): a dependency-free Node 20+ client library (`lib/jev.mjs`: `jevCheck`, `jevRoute`, `jevScore`, `jevEvaluate`, credential redaction, probability thresholds) plus a stdio MCP server (`server/jev-mcp.mjs`) exposing the same four operations as MCP tools, so native DSH modes and code mode can call Jev for small coding-agent judgments (is this failure transient, which subsystem owns this bug, how severe is this defect, should this diff be blocked). (1★, JavaScript, MIT, created 2026-10-31; real non-fork verified via GitHub API repo record + raw README + lib/jev.mjs, 338 lines)
 
+- [AJackTi/antigravity-jev-skills](https://github.com/AJackTi/antigravity-jev-skills) — Antigravity agent skills where Gemini implements code, Jev triages evidence, a fresh Gemini session reviews independently, and ChatGPT coordinates and does the final review: three skills (`antigravity-task-runner`, `antigravity-sol-quant-runner`, `jev-calibrated-decisions`) with a Jev review gate (`jev_review_gate.py`, `jev-gate.md`) that runs typed triage on `jev-1.13.0` via a TypeSafe API key; installer registers symlinks only and does not auto-authenticate CLIs. Requires macOS/Linux, Python 3.10+, and an authenticated `agy` CLI. (1★, Python, created 2026-10-31; real non-fork verified via GitHub API repo record + tree + raw README; no declared license)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
