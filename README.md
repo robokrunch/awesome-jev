@@ -2212,6 +2212,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [FMXExpress/JevBan](https://github.com/FMXExpress/JevBan) — fail2ban for web attackers, with an AI judge: watches the web server's access logs for clients probing for security holes, asks a decision model whether each one is really attacking, and bans confirmed attackers in the firewall; the default is a local open decision model run in-process on llama.cpp, with hosted providers selectable in one line — including TypeSafe Jev (`jev-latest` via `TYPESAFE_API_KEY`; DigitalOcean/Abacus/Vercel gateways also listed). (0★, Pascal, MIT, created 2026-10-31; real non-fork verified via GitHub API repo record + raw README provider table)
 
+- [heyk1njo/jev-mobile-pilot](https://github.com/heyk1njo/jev-mobile-pilot) — Let coding agents drive iOS Simulators and Android emulators/devices without spending the agent's own tokens on every tap: code reads the screen's accessibility tree, TypeSafe's Jev picks each step (which element next, is the goal done), and the agent only plans and answers occasional questions; ships an MCP server, and escalates to the agent when unsure, blocked, or about to do something irreversible. Privacy note from the author, kept here: screen labels and values, the goal, hints and param names go to TypeSafe's API, but screenshots are never sent to Jev. Caveat, kept here: real iPhones are not supported (Simulator only); real Android devices only with the operator's permission. Author's example run: 2 steps, 5 Jev calls, $0.00017, 6s. (0★, TypeScript, MIT, created 2026-10-31; real non-fork verified via GitHub API tree + raw README + src/jev/client.ts)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
