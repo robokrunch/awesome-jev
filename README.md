@@ -2251,6 +2251,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [emsameen/jev-decision-quest](https://github.com/emsameen/jev-decision-quest) — Local turn-based learning game for Jev-style decision models (Gradio + Ollama): five short adventures where you pick a route before running the configured model, then compare both against the fixed game answer; question catalogs in English, Arabic and German. Runs a local model (default `d3:4b`) through Ollama's `/v1/systemone` endpoint, not TypeSafe hosted Jev. (0★, Python, MIT, created 2026-10-31; watch fill from the 2026-11-01 07:21 round's size0-watch list; real non-fork verified via GitHub API tree (18 files) + raw README + `decision_quest/ollama.py` systemone call site)
 
+- [AS214933/astrbot-betterchat](https://github.com/AS214933/astrbot-betterchat) — AstrBot plugin: waits for a user to finish multi-message private chats (trailing-edge debounce, merged into one input, interruptible generation) and uses TypeSafe Jev in group chats to decide whether to chime in — or to filter @-mentions that need no reply. `betterchat_jev.py` calls `api.typesafe.ai/v1/systemone` directly with a Cloudflare AI Gateway fallback, and reply thresholds live in plugin code so retuning needs no re-request. (0★, Python, MIT, created 2026-11-01; watch fill from the 2026-11-01 15:21 round's size0-watch list; real non-fork verified via GitHub API tree (18 files) + raw README + `betterchat_jev.py` systemone call site)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
