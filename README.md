@@ -2303,6 +2303,10 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [vit-cerny/dsh-cu](https://github.com/vit-cerny/dsh-cu) — Windows computer-use CLI (Node + built-in PowerShell, no dependencies, no resident process): reads the screen, clicks, types and opens apps from a single command, with multi-monitor support and a background mode that never steals the foreground window; the model is pluggable and the TypeSafe Jev provider calls `api.typesafe.ai/v1/systemone` with `jev-latest` (needs `TYPESAFE_API_KEY`), offering observed controls as choices so Jev picks the next operation — the same pattern as Jev's browser agent. OpenAI-compatible endpoints or the session's own DSH model are alternatives. (0★, JavaScript, MIT, created 2026-11-02; real non-fork verified via GitHub API tree (10 files) + raw README + `bin/dsh-cu.mjs` systemone call site)
 
+- [Endgame-Labs/understudy](https://github.com/Endgame-Labs/understudy) — Drop-in, CPU-only proxy for System One models (Jev, Rune, Clef as "leads"): forwards each request to the lead while training tiny CPU "understudents" on the lead's answers; when one reaches near-parity it graduates and answers that question locally, with sampled audits demoting any understudent that slips — for narrow, repeated decisions (triage, routing, moderation) where the same question is asked millions of times. Shadow mode first, then serve mode; one env var repoints the TypeSafe SDK at it. (2★, Rust, MIT, created 2026-11-02; real non-fork verified via GitHub API tree (2,315 files) + raw README + `src/proxy.rs` + `src/understudent.rs`)
+
+- [BronOS/cc-cockpit-jev](https://github.com/BronOS/cc-cockpit-jev) — Jev as a cc-cockpit plugin service: other plugins ask choice, yes/no and score questions through it, with usage counts and a monthly cap. (0★, JavaScript, MIT, created 2026-11-02; watch fill from the 2026-11-03 03:21 round's size0-watch list; real non-fork verified via GitHub API tree (21 files) + raw README + `test/client.test.js`)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
