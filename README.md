@@ -2301,6 +2301,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [toni-ramchandani/jev-from-scratch](https://github.com/toni-ramchandani/jev-from-scratch) — Jev-inspired decision model built from scratch: a 116,545-parameter transformer plus a reverse-mode autodiff engine in NumPy that scores caller-supplied options and answers Choice, Score and Noul questions in one packed forward pass, with a companion article and technical review. Caveat: an independent learning experiment — the README states it is not Jev, not a reconstruction of its architecture, not an RLCD implementation and not a benchmark of TypeSafe's service; the reproduction gap is unresolved (fresh 4,000-step training reaches 50.9% Choice accuracy vs 66.65% re-evaluating the supplied checkpoint). (0★, Python, MIT, created 2026-11-02; real non-fork verified via GitHub API tree (70 files) + raw README)
 
+- [vit-cerny/dsh-cu](https://github.com/vit-cerny/dsh-cu) — Windows computer-use CLI (Node + built-in PowerShell, no dependencies, no resident process): reads the screen, clicks, types and opens apps from a single command, with multi-monitor support and a background mode that never steals the foreground window; the model is pluggable and the TypeSafe Jev provider calls `api.typesafe.ai/v1/systemone` with `jev-latest` (needs `TYPESAFE_API_KEY`), offering observed controls as choices so Jev picks the next operation — the same pattern as Jev's browser agent. OpenAI-compatible endpoints or the session's own DSH model are alternatives. (0★, JavaScript, MIT, created 2026-11-02; real non-fork verified via GitHub API tree (10 files) + raw README + `bin/dsh-cu.mjs` systemone call site)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
