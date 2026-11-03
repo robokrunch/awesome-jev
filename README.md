@@ -2319,6 +2319,8 @@ Numbers with sources. Vendor claims are labeled as such.
 
 - [Ramolisdenneyous/Drone-Commander-Powered-by-Jev](https://github.com/Ramolisdenneyous/Drone-Commander-Powered-by-Jev) — Wargame (not real drones): a hex-battlefield drone-commander game whose backend can select each unit's legal tactical option through TypeSafe Jev — `backend/app/agents/provider.py` implements the Jev path behind a `tactical_provider=jev` setting, with `backend/tests/test_jev_provider.py` covering confidence/margin gating. Caveat: Jev is one selectable provider among LLM adapters, and the units are game pieces, not physical drones. (0★, Python, MIT, created 2026-11-03; real non-fork verified via GitHub API tree (757 files) + raw README + `backend/app/agents/provider.py`)
 
+- [BronOS/cc-cockpit-jev-triage](https://github.com/BronOS/cc-cockpit-jev-triage) — Companion to the already-listed cc-cockpit-jev service: tells cc-cockpit source plugins (mail, Jira, chat, Forgejo, calendar) how much each item needs the person, as a priority (`urgent`/`action`/`fyi`/`noise`) plus a kind (`request`/`incident`/`discussion`/`alert`/`notification`/`ack`); TypeSafe Jev judges only items neither a source hint nor a project rule decided, via one `jev.grid` per 50 items with two `choice` questions, with per-project rules, corrections and a verdict panel (`Wrong?`/`Improve`) on top, and requires the sibling `bronos.jev` plugin installed in the same project. (0★, JavaScript, MIT, created 2026-11-03; real non-fork verified via GitHub API tree (35 files) + raw README + `dist/lib/questions.js`)
+
 ## Demos on X
 
 Single-post links rot fast; handles + what they showed. PRs with direct links welcome.
